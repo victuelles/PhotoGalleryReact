@@ -3,9 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "firebase": "^5.0.4",
+    "font-awesome": "^4.7.0",
     "react": "^16.4.0",
+    "react-burger-menu": "^2.5.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "react-multistep": "^3.2.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-stepzilla": "^4.7.2",
+    "react-stripe-checkout": "^2.6.3",
+    "reactstrap": "^6.1.0",
+    "video.js": "^7.0.3",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

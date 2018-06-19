@@ -2,7 +2,10 @@
 
 # dependencies
 /node_modules
-
+#api keys
+/src/firebase/firebase.js
+/src/constants/stripe.js
+/src/constants/server.js
 # testing
 /coverage
 
