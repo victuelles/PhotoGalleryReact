@@ -4,7 +4,7 @@ import * as routes from '../constants/routes'
 import SignOutButton from './SignOut';
 import logo from "../images/logo.png";
 
-import './style.css';
+
 import {
     Collapse,
     Navbar,
@@ -46,31 +46,35 @@ class NavigationAuth extends Component {
 
                 <div className="col-12 col-lg-10">
                     <div className="menu_area">
-                        <nav className="navbar navbar-expand-lg navbar-light">
-                  
-                            <a className="navbar-brand" href={routes.LANDING}>Ep</a>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                        
-                            <div className="collapse navbar-collapse" id="ca-navbar">
-                                <ul className="navbar-nav ml-auto" id="nav">
-                                    <li className="nav-item active"><a className="nav-link" href={routes.LANDING}>Home</a></li>
-                                    <li className="nav-item"><a className="nav-link" href={routes.STRIPE_STORE}>Store</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
-                                </ul>
-                                <div className="sing-up-button d-lg-none">
-                                    <a href={routes.SIGN_IN}>Sign Up Free</a>
-                                </div>
-                            </div>
-                        </nav>
+                    <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
+                      <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
+                      <NavbarToggler onClick={this.toggle} />
+                      <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="navbar-nav ml-auto" navbar>
+                        <NavItem>
+                            <NavLink href={routes.LANDING}>Home</NavLink>
+                          </NavItem>
+                          <NavItem>
+                            <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+                          </NavItem>
+                          <NavItem>
+                            <NavLink href={routes.USER_INFO}>Account</NavLink>
+                          </NavItem>                 
+                          <NavItem><SignOutButton/>
+                          </NavItem>
+                          <NavItem>
+                          <div className="col-12 col-lg-2">
+                              <div className="sing-up-button d-none d-lg-block">
+                                  <a href={routes.SIGN_UP}>Sign Up Free</a>
+                              </div>
+                          </div>
+                        </NavItem>
+                        </Nav>
+                      </Collapse>
+                    </Navbar>
                     </div>
                 </div>
             
-                <div className="col-12 col-lg-2">
-                    <div className="sing-up-button d-none d-lg-block">
-                        <a href={routes.SIGN_IN}>Sign Up Free</a>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
@@ -96,42 +100,41 @@ class NavigationNonAuth extends Component {
   }
     render() { 
       return  (
-        <div>
-   <header className="header_area animated">
+        
+        <header className="header_area animated">
         <div className="container-fluid">
             <div className="row align-items-center">
-
-                <div className="col-12 col-lg-10">
+            <div className="col-12 col-lg-10">
                     <div className="menu_area">
-                        <nav className="navbar navbar-expand-lg navbar-light">
-                  
-                            <a className="navbar-brand" href={routes.LANDING}>Ep</a>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                        
-                            <div className="collapse navbar-collapse" id="ca-navbar">
-                                <ul className="navbar-nav ml-auto" id="nav">
-                                    <li className="nav-item active"><a className="nav-link" href={routes.LANDING}>Home</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#about">Store</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
-                                </ul>
-                                <div className="sing-up-button d-lg-none">
-                                    <a href={routes.SIGN_IN}>Sign Up Free</a>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            
+                    <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
+          <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
+              </NavItem>
+            <NavItem>
+
                 <div className="col-12 col-lg-2">
                     <div className="sing-up-button d-none d-lg-block">
-                        <a href={routes.SIGN_IN}>Sign Up Free</a>
+                        <a href={routes.SIGN_UP}>Sign Up Free</a>
                     </div>
                 </div>
+              </NavItem>
+
+            </Nav>
+          </Collapse>
+        </Navbar>          
+          </div>
+        </div>
             </div>
         </div>
     </header>
-         </div>
+        
      
       )
     }

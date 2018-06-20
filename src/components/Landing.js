@@ -12,7 +12,7 @@ import VideoIntro from './VideoIntro'
 
 const Landing = () => 
 <div>
-<Navigation />
+
 <section className="wellcome_area clearfix" id="home">
         <div className="container h-100">
             <div className="row h-100 align-items-center">

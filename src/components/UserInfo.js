@@ -147,6 +147,7 @@ class UserInfo extends Component {
       }
       
         return (
+
         <Form  onSubmit={this.onSubmit}>
          <br/>
          <h4>Personal Info</h4>
@@ -256,18 +257,21 @@ class UserInfo extends Component {
          </Row>
         
     </Form>
+
         )
     }
 
     render() { 
     
         return ( 
-            <Container style={{marginTop:40+'px'}}>
+          <section className="wellcome_area clearfix" id="home">
+          <div className="container h-100" style={{paddingTop:"120px"}}>
                 <Row>
                  <h2>Account</h2>
                 </Row>
                 {this.renderUser()}
-            </Container>
+                </div>
+    </section>
         
          )
     }
