@@ -13,11 +13,12 @@ import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
-import './App.css';
+import './responsive.css';
+
 const App = () => 
   <Router>
     <div>
-        <Navigation />
+      
 
         <Route 
           exact path={routes.LANDING} component={()=><LandingPage/>} 

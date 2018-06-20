@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import withAuthorization from './withAuthorization'
 import {db,firebase} from '../firebase'
 import * as routes from '../constants/routes'
+import {UPLOAD_URL} from '../constants/server'
 import axios from  'axios'
 
 import { Container,Row,Col, Button, Form, FormGroup, Label, Input, FormText,Progress,Fade } from 'reactstrap';
@@ -75,7 +76,7 @@ class UserInfo extends Component {
     fd.append('image',this.state.selectedFile,newFN)
     fd.append('uid',this.state.id)
     
-    axios.post(' https://us-central1-contentether.cloudfunctions.net/uploadFile',
+    axios.post(UPLOAD_URL,
     fd,{
       onUploadProgress:progressEvent =>{
         console.log('Upload progress: '+Math.round((progressEvent.loaded/progressEvent.total)*100)+"%")

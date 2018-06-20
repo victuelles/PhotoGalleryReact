@@ -4,6 +4,7 @@ import * as routes from '../constants/routes'
 import SignOutButton from './SignOut';
 import logo from "../images/logo.png";
 
+import './style.css';
 import {
     Collapse,
     Navbar,
@@ -38,25 +39,45 @@ class NavigationAuth extends Component {
        render() { 
          return  (
            <div>
-           <Navbar color="dark" dark expand="md">
-             <NavbarBrand href="/"><img src={logo} className="navbar-brand logo" alt="logo" /></NavbarBrand>
-             <NavbarToggler onClick={this.toggle} />
-             <Collapse isOpen={this.state.isOpen} navbar>
-               <Nav className="ml-auto" navbar>
-               <NavItem>
-                   <NavLink href={routes.LANDING}>Home</NavLink>
-                 </NavItem>
-                 <NavItem>
-                   <NavLink href={routes.JOIN_TOKEN_SALE}>Join Token Sale</NavLink>
-                 </NavItem>
-                 <NavItem>
-                   <NavLink href={routes.USER_INFO}>Account</NavLink>
-                 </NavItem>                 
-                 <NavItem><SignOutButton/>
-                 </NavItem>
-               </Nav>
-             </Collapse>
-           </Navbar>
+           
+    <header className="header_area animated">
+        <div className="container-fluid">
+            <div className="row align-items-center">
+
+                <div className="col-12 col-lg-10">
+                    <div className="menu_area">
+                        <nav className="navbar navbar-expand-lg navbar-light">
+                  
+                            <a className="navbar-brand" href="#">EP</a>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                        
+                            <div className="collapse navbar-collapse" id="ca-navbar">
+                                <ul className="navbar-nav ml-auto" id="nav">
+                                    <li className="nav-item active"><a className="nav-link" href="#home">Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#screenshot">Screenshot</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#pricing">Pricing</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                                </ul>
+                                <div className="sing-up-button d-lg-none">
+                                    <a href="#">Sign Up Free</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            
+                <div className="col-12 col-lg-2">
+                    <div className="sing-up-button d-none d-lg-block">
+                        <a href="#">Sign Up Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
          </div>
          )
        }
@@ -80,21 +101,46 @@ class NavigationNonAuth extends Component {
     render() { 
       return  (
         <div>
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/"><img src={logo} className="navbar-brand logo" alt="logo" /></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href={routes.JOIN_TOKEN_SALE}>Join Token Sale</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+   <header className="header_area animated">
+        <div className="container-fluid">
+            <div className="row align-items-center">
+
+                <div className="col-12 col-lg-10">
+                    <div className="menu_area">
+                        <nav className="navbar navbar-expand-lg navbar-light">
+                  
+                            <a className="navbar-brand" href="#">Ca.</a>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                        
+                            <div className="collapse navbar-collapse" id="ca-navbar">
+                                <ul className="navbar-nav ml-auto" id="nav">
+                                    <li className="nav-item active"><a className="nav-link" href="#home">Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#screenshot">Screenshot</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#pricing">Pricing</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                                </ul>
+                                <div className="sing-up-button d-lg-none">
+                                    <a href="#">Sign Up Free</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            
+                <div className="col-12 col-lg-2">
+                    <div className="sing-up-button d-none d-lg-block">
+                        <a href="#">Sign Up Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+         </div>
+     
       )
     }
 }
