@@ -48,22 +48,18 @@ class NavigationAuth extends Component {
                     <div className="menu_area">
                         <nav className="navbar navbar-expand-lg navbar-light">
                   
-                            <a className="navbar-brand" href="#">EP</a>
+                            <a className="navbar-brand" href={routes.LANDING}>Ep</a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                         
                             <div className="collapse navbar-collapse" id="ca-navbar">
                                 <ul className="navbar-nav ml-auto" id="nav">
-                                    <li className="nav-item active"><a className="nav-link" href="#home">Home</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+                                    <li className="nav-item active"><a className="nav-link" href={routes.LANDING}>Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href={routes.STRIPE_STORE}>Store</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#screenshot">Screenshot</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#pricing">Pricing</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
                                 </ul>
                                 <div className="sing-up-button d-lg-none">
-                                    <a href="#">Sign Up Free</a>
+                                    <a href={routes.SIGN_IN}>Sign Up Free</a>
                                 </div>
                             </div>
                         </nav>
@@ -72,7 +68,7 @@ class NavigationAuth extends Component {
             
                 <div className="col-12 col-lg-2">
                     <div className="sing-up-button d-none d-lg-block">
-                        <a href="#">Sign Up Free</a>
+                        <a href={routes.SIGN_IN}>Sign Up Free</a>
                     </div>
                 </div>
             </div>
@@ -109,22 +105,18 @@ class NavigationNonAuth extends Component {
                     <div className="menu_area">
                         <nav className="navbar navbar-expand-lg navbar-light">
                   
-                            <a className="navbar-brand" href="#">Ca.</a>
+                            <a className="navbar-brand" href={routes.LANDING}>Ep</a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                         
                             <div className="collapse navbar-collapse" id="ca-navbar">
                                 <ul className="navbar-nav ml-auto" id="nav">
-                                    <li className="nav-item active"><a className="nav-link" href="#home">Home</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+                                    <li className="nav-item active"><a className="nav-link" href={routes.LANDING}>Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#about">Store</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#screenshot">Screenshot</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#pricing">Pricing</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
                                 </ul>
                                 <div className="sing-up-button d-lg-none">
-                                    <a href="#">Sign Up Free</a>
+                                    <a href={routes.SIGN_IN}>Sign Up Free</a>
                                 </div>
                             </div>
                         </nav>
@@ -133,7 +125,7 @@ class NavigationNonAuth extends Component {
             
                 <div className="col-12 col-lg-2">
                     <div className="sing-up-button d-none d-lg-block">
-                        <a href="#">Sign Up Free</a>
+                        <a href={routes.SIGN_IN}>Sign Up Free</a>
                     </div>
                 </div>
             </div>

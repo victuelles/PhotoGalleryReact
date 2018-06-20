@@ -52,7 +52,9 @@ class SignInForm extends Component {
            
 
         return ( 
-            <div className="container"  style={{marginTop:40+'px'}}>  
+            <section className="wellcome_area clearfix" id="home">
+             <div className="container h-100" style={{paddingTop:"120px"}}>
+            <div className=" h-100 align-items-center"> 
             <form onSubmit={this.onSubmit}>
                 <div className="row">
                     <div className="col-md-3"></div>
@@ -129,6 +131,9 @@ class SignInForm extends Component {
       
          </form>
      </div>
+     </div>
+
+     </section>
          )
     }
 }

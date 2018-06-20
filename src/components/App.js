@@ -18,8 +18,7 @@ import './responsive.css';
 const App = () => 
   <Router>
     <div>
-      
-
+    <Navigation />
         <Route 
           exact path={routes.LANDING} component={()=><LandingPage/>} 
         />

@@ -69,7 +69,8 @@ class SignUpForm extends Component {
                 username===''
 
         return (
-        <div className="container"  style={{marginTop:40+'px'}}>
+            <section className="wellcome_area clearfix" id="home">
+            <div className="container h-100" style={{paddingTop:"120px"}}>
         
            <form  onSubmit={this.onSubmit}>
             <h2 className="text-center">Sign Up</h2>
@@ -152,6 +153,7 @@ class SignUpForm extends Component {
             </form>
             
         </div>
+        </section>
          )
     }
 }
