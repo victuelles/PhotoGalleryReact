@@ -7,6 +7,7 @@ import 'video.js/dist/video-js.css'
 export default class VideoPlayer extends Component {
   componentDidMount() {
     // instantiate Video.js
+    //http://docs.videojs.com/tutorial-react.html
     this.player = videojs(this.videoNode, this.props, function onPlayerReady() {
       console.log('onPlayerReady', this)
     });

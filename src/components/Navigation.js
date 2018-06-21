@@ -62,16 +62,18 @@ class NavigationAuth extends Component {
                           </NavItem>                 
                           <NavItem><SignOutButton/>
                           </NavItem>
-                          <NavItem>
-                          <div className="col-12 col-lg-2">
+                            </Nav>
+  
+                      </Collapse>
+                      <div className="col-12 col-lg-2">
                               <div className="sing-up-button d-none d-lg-block">
                                   <a href={routes.SIGN_UP}>Sign Up Free</a>
                               </div>
                           </div>
-                        </NavItem>
-                        </Nav>
-                      </Collapse>
                     </Navbar>
+                        <div className="sing-up-button d-lg-none">
+                              <a href="#">Sign Up Free</a>
+                        </div>
                     </div>
                 </div>
             
@@ -110,28 +112,30 @@ class NavigationNonAuth extends Component {
           <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto"  id="nav" navbar>
+            <NavItem>
+                            <NavLink href={routes.LANDING}>Home</NavLink>
+                          </NavItem>
               <NavItem>
                 <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
               </NavItem>
-            <NavItem>
-
-                <div className="col-12 col-lg-2">
+            </Nav>
+            <div className="col-12 col-lg-2">
                     <div className="sing-up-button d-none d-lg-block">
                         <a href={routes.SIGN_UP}>Sign Up Free</a>
                     </div>
                 </div>
-              </NavItem>
-
-            </Nav>
           </Collapse>
         </Navbar>          
           </div>
+
         </div>
+
             </div>
+            
         </div>
     </header>
         

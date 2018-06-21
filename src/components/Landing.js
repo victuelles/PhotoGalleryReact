@@ -1,19 +1,14 @@
 import React from 'react';
-import Background from '../images/welcome-bg.png';
-import People from '../images/icon_people_circle.png';
-import Navigation from './Navigation'
-import Feature1 from '../images/welcome-img.png';
 import Feature2 from '../images/salsa_champs.png';
-import Feature3 from '../images/feature_rewards.png';
-import Feature4 from '../images/feature_purchase.png';
-import TechLogo from '../images/icon_deep_technology.png'
-import * as routes from '../constants/routes'
-import VideoIntro from './VideoIntro'
+import AboutPage from './About'
+import FeaturesPage from './FeaturesPage'
+import VideoPage from './VideoPage'
+
 
 const Landing = () => 
 <div>
 
-<section className="wellcome_area clearfix" id="home">
+  <section className="wellcome_area clearfix" id="home">
         <div className="container h-100">
             <div className="row h-100 align-items-center">
                 <div className="col-12 col-md">
@@ -37,6 +32,9 @@ const Landing = () =>
             <img src={Feature2} alt="" />
         </div>
     </section>
+    <AboutPage />
+    <FeaturesPage/>
+    <VideoPage/>
 </div>
 
  
