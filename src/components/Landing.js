@@ -3,7 +3,7 @@ import Background from '../images/welcome-bg.png';
 import People from '../images/icon_people_circle.png';
 import Navigation from './Navigation'
 import Feature1 from '../images/welcome-img.png';
-import Feature2 from '../images/salsa_champs.jpg';
+import Feature2 from '../images/salsa_champs.png';
 import Feature3 from '../images/feature_rewards.png';
 import Feature4 from '../images/feature_purchase.png';
 import TechLogo from '../images/icon_deep_technology.png'
@@ -24,10 +24,9 @@ const Landing = () =>
                     </div>
                     <div className="get-start-area">
                       
-                        <form action="#" method="post" className="form-inline">
-                            <input type="email" className="form-control email" placeholder="name@company.com" />
-                            <input type="submit" className="submit" value="Get Started"/>
-                        </form>
+
+                            <a href="/signin" className="submit">Get Started</a>
+                       
                        
                     </div>
                 </div>

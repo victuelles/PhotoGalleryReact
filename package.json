@@ -8,6 +8,7 @@
     "bootstrap": "^4.1.1",
     "firebase": "^5.0.4",
     "font-awesome": "^4.7.0",
+    "owl.carousel2": "^2.2.1",
     "react": "^16.4.0",
     "react-burger-menu": "^2.5.0",
     "react-dom": "^16.4.0",

@@ -40,7 +40,7 @@ class NavigationAuth extends Component {
          return  (
            <div>
            
-    <header className="header_area animated">
+    <header className="header_area animated sticky slideInDown">
         <div className="container-fluid">
             <div className="row align-items-center">
 
@@ -101,7 +101,7 @@ class NavigationNonAuth extends Component {
     render() { 
       return  (
         
-        <header className="header_area animated">
+        <header className="header_area animated sticky slideInDown">
         <div className="container-fluid">
             <div className="row align-items-center">
             <div className="col-12 col-lg-10">

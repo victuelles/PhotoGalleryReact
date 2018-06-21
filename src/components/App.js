@@ -13,8 +13,8 @@ import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
-import './responsive.css';
-import './style.css';
+
+
 const App = () => 
   <Router>
     <div>

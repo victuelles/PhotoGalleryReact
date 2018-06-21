@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../node_modules/font-awesome/css/font-awesome.min.css'
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
-
 import WebFont from 'webfontloader';
+import './components/library.css';
+import './components/style.css';
+import './components/responsive.css';
 WebFont.load({
     google: {
       families: [
