@@ -10,3 +10,5 @@ export const STRIPE_STORE ='/store'
 export const PHOTO_DETAILS ='/photo_details'
 
 export const KENDO_GRID ='/grid_products'
+export const EVENTS_GRID ='/events'
+export const CLIENTS_GRID ='/clients'

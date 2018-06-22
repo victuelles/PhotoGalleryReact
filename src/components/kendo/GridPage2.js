@@ -2,8 +2,9 @@ import React from 'react';
 import { Grid, GridColumn as Column, GridCell } from '@progress/kendo-react-grid';
 
 
-import '@progress/kendo-theme-default/dist/all.css';
-
+//import '@progress/kendo-theme-default/dist/all.css';
+import '@progress/kendo-theme-bootstrap/dist/all.css';
+//npm install --save @progress/kendo-theme-bootstrap
 //import products from 'products.json';
 
 class CustomCell extends GridCell {

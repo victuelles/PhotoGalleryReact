@@ -11,7 +11,8 @@ import AccountPage from './Account'
 import JoinTokeSalePage from './JoinTokeSale'
 import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
-import GridPage from './kendo/GridPage'
+import EventsPage from './kendo/EventsPage'
+import ClientsPage from './kendo/ClientsPage'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
 
@@ -47,10 +48,12 @@ const App = () =>
         <Route 
           exact path={routes.STRIPE_STORE} component={()=><StripeStore/>} 
         />
-            <Route 
-          exact path={routes.KENDO_GRID} component={()=><GridPage/>} 
+        <Route 
+          exact path={routes.EVENTS_GRID} component={()=><EventsPage/>} 
         />
-        
+        <Route 
+          exact path={routes.CLIENTS_GRID} component={()=><ClientsPage/>} 
+        />
          <Footer/>
       </div>
      

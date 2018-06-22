@@ -2,8 +2,7 @@ import React from 'react';
 import AlbumRow from './AlbumRow'
 import AlbumCard from './AlbumCard'
 import AlbumHeader from './AlbumHeader'
-import {Container,Row,Col, CardColumns, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button,Badge } from 'reactstrap';
+import { CardColumns } from 'reactstrap';
 const StorePresentation = (props) => {
     let activeComponent =null;
     let activeAlbumHeader=null;

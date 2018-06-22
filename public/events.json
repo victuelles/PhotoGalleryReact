@@ -1,0 +1,31 @@
+{
+    "event1" : {
+      "date" : "June 15,2017",
+      "description" : "Fundraising for DCANC",
+      "location" : "Convention center,SSF",
+      "time" : "5pm-1a,",
+      "title" : "Dagupan Induction Party 2017"
+    },
+    "event2" : {
+      "date" : "Dec 25,2017",
+      "description" : "Fundraising for MAC",
+      "location" : "BuriBuri,SSF",
+      "time" : "1pm-5pm",
+      "title" : "MAC Hawaiian Party"
+    },
+    "event3" : {
+      "date" : "Jan 1,2018",
+      "description" : "Fundraising for INA",
+      "location" : "Hyatt Hotel",
+      "time" : "1pm-5pm",
+      "title" : "Ilocandia Party"
+    },
+    "event4" : {
+      "date" : "Feb 14,2018",
+      "description" : "Fundraising for UPAI",
+      "location" : "Crown Plaza Hotel",
+      "time" : "5pm-12a,",
+      "title" : "Pangasinan Party 2018"
+    }
+}
+  

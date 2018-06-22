@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkout from './Checkout'
-import {Container,Row,Col, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button,Badge } from 'reactstrap';
+import {Col, Card, CardImg, CardText, CardBody,
+    CardTitle, Button,Badge } from 'reactstrap';
 const AlbumRow = (props) => {
     const setActive=(e)=>{
         e.preventDefault();

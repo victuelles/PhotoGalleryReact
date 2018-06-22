@@ -1,0 +1,23 @@
+{
+    "client1" : {
+      "email" : "client1@romphoto.com",
+      "fullname" : "Client One",
+      "phone" : "(415) 4444-4444"
+    },
+    "client2" : {
+      "email" : "client2@art.com",
+      "fullname" : "Client Two",
+      "phone" : "(510) 1234-4444"
+    },
+    "client3" : {
+      "email" : "client3@art.com",
+      "fullname" : "Client Three",
+      "phone" : "(408) 4444-4231"
+    },
+    "client4" : {
+      "email" : "client4@art.com",
+      "fullname" : "Client Four",
+      "phone" : "(650) 321-4444"
+    }
+  }
+  
