@@ -62,6 +62,9 @@ class NavigationAuth extends Component {
                         </NavItem>
                         <NavItem>
                            <NavLink href={routes.CLIENTS_GRID}>Clients</NavLink>
+                        </NavItem>                        
+                        <NavItem>
+                           <NavLink href={routes.UPLOAD_PHOTOS}>Upload</NavLink>
                         </NavItem>
                           <NavItem>
                             <NavLink href={routes.USER_INFO}>Account</NavLink>

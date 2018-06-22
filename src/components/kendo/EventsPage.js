@@ -13,24 +13,24 @@ class GridPage extends React.Component {
 
     componentDidMount() {
         console.log("componentDidMount",this.state)
-      this.fetchProducts();
+      this.fetchData();
 
     
     }
   
-    fetchProducts=()=>{
+    fetchData=()=>{
       fetch('/events.json')
       .then(rsp => rsp.json())
-      .then(products =>{
-       console.log(products)
+      .then(data =>{
+       console.log(data)
        
        //  this.setState({gridData:products});
         let gridData=[]
-       const objReturn = Object.keys(products).map((item,idx) => {
+       const objReturn = Object.keys(data).map((item,idx) => {
       //  const item =props.activeAlbum.files[idx];
         //item.key=item.filename;
       //  console.log("item",products[item],idx);
-        let event=products[item];
+        let event=data[item];
         event.id=item;
         event.order=++idx;
         console.log("event",event);

@@ -13,6 +13,7 @@ import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
 import EventsPage from './kendo/EventsPage'
 import ClientsPage from './kendo/ClientsPage'
+import Uploader from './kendo/Uploader'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
 
@@ -53,6 +54,9 @@ const App = () =>
         />
         <Route 
           exact path={routes.CLIENTS_GRID} component={()=><ClientsPage/>} 
+        />
+        <Route 
+          exact path={routes.UPLOAD_PHOTOS} component={()=><Uploader/>} 
         />
          <Footer/>
       </div>
