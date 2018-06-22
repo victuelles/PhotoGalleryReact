@@ -30,7 +30,7 @@ class StripeStore extends Component {
     render() { 
        // console.log("state",this.state)
        return(
-        <section className="wellcome_area clearfix" id="home">
+        <section className="wellcome_area2 clearfix" id="home">
           <div className="container h-100" style={{paddingTop:"120px"}}>
             <StorePresentation allPhotos={this.state.allPhotos} 
               setActiveAlbum={this.setActiveAlbum} 

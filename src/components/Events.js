@@ -6,9 +6,9 @@ import {UPLOAD_URL} from '../constants/server'
 import axios from  'axios'
 
 import { Container,Row,Col, Button, Form, FormGroup, Label, Input, FormText,Progress,Fade } from 'reactstrap';
-const UserPage = ({history}) => 
+const EventsPage = ({history}) => 
     <div>
-        <UserInfo history={history}/>
+        <EventsInfo history={history}/>
     </div>
 
 const INITIAL_STATE= {
@@ -33,7 +33,7 @@ const byPropKey =(propertyName,value)=>()=>({
   [propertyName]:value,
 })
 
-class UserInfo extends Component {
+class EventsInfo extends Component {
  
   constructor(props){
       super(props)
@@ -264,7 +264,7 @@ class UserInfo extends Component {
     render() { 
     
         return ( 
-          <section className="wellcome_area2 clearfix" id="home">
+          <section className="wellcome_area clearfix" id="home">
           <div className="container h-100" style={{paddingTop:"120px"}}>
                 <Row>
                  <h2>Account</h2>

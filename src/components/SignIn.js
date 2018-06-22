@@ -52,7 +52,7 @@ class SignInForm extends Component {
            
 
         return ( 
-            <section className="wellcome_area clearfix" id="home">
+            <section className="wellcome_area2 clearfix" id="home">
              <div className="container h-100" style={{paddingTop:"120px"}}>
             <div className=" h-100 align-items-center"> 
             <form onSubmit={this.onSubmit}>

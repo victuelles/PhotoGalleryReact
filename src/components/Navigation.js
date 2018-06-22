@@ -49,8 +49,8 @@ class NavigationAuth extends Component {
                     <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
                       <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
                       <NavbarToggler onClick={this.toggle} />
-                      <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="navbar-nav ml-auto" navbar>
+                      <Collapse isOpen={this.state.isOpen} navbar id="ca-navbar">
+                        <Nav className="navbar-nav ml-auto" id="nav" navbar>
                         <NavItem>
                             <NavLink href={routes.LANDING}>Home</NavLink>
                           </NavItem>
@@ -65,15 +65,9 @@ class NavigationAuth extends Component {
                             </Nav>
   
                       </Collapse>
-                      <div className="col-12 col-lg-2">
-                              <div className="sing-up-button d-none d-lg-block">
-                                  <a href={routes.SIGN_UP}>Sign Up Free</a>
-                              </div>
-                          </div>
+                     
                     </Navbar>
-                        <div className="sing-up-button d-lg-none">
-                              <a href="#">Sign Up Free</a>
-                        </div>
+                        
                     </div>
                 </div>
             
@@ -107,30 +101,31 @@ class NavigationNonAuth extends Component {
         <div className="container-fluid">
             <div className="row align-items-center">
             <div className="col-12 col-lg-10">
-                    <div className="menu_area">
-                    <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
-          <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto"  id="nav" navbar>
-            <NavItem>
-                            <NavLink href={routes.LANDING}>Home</NavLink>
-                          </NavItem>
-              <NavItem>
-                <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
-              </NavItem>
-            </Nav>
-            <div className="col-12 col-lg-2">
-                    <div className="sing-up-button d-none d-lg-block">
-                        <a href={routes.SIGN_UP}>Sign Up Free</a>
-                    </div>
-                </div>
-          </Collapse>
-        </Navbar>          
-          </div>
+              <div className="menu_area">
+                <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
+                <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
+                <NavbarToggler onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar id="ca-navbar">
+                  <Nav className="ml-auto"  id="nav" navbar>
+                    <NavItem>
+                      <NavLink href={routes.LANDING}>Home</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
+                    </NavItem>
+                  </Nav>
+                  <div className="col-12 col-lg-2">
+                          <div className="sing-up-button d-none d-lg-block">
+                              <a href={routes.SIGN_UP}>Sign Up Free</a>
+                          </div>
+                   </div>
+                  </Collapse>
+                </Navbar>  
+                       
+            </div>
 
         </div>
 

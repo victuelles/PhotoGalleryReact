@@ -19,3 +19,11 @@ export const updateUser=(id,username,bday,phone,country,city,street,zipcode)=>
     db.ref(`users/${id}`).update({
         username,bday,phone,country,city,street,zipcode
     })
+
+//events
+
+export const getAllEvents=(uid)=>
+    db.ref(`events/${uid}`).once('value')
+
+export const getEvent=(uid,eventid)=>
+    db.ref(`events/${uid}/${eventid}`).once('value')

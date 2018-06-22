@@ -69,7 +69,7 @@ class SignUpForm extends Component {
                 username===''
 
         return (
-            <section className="wellcome_area clearfix" id="home">
+            <section className="wellcome_area2 clearfix" id="home">
             <div className="container h-100" style={{paddingTop:"120px"}}>
         
            <form  onSubmit={this.onSubmit}>
