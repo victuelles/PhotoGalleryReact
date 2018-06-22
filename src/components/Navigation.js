@@ -47,7 +47,7 @@ class NavigationAuth extends Component {
                 <div className="col-12 col-lg-10">
                     <div className="menu_area">
                     <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
-                      <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
+                      <NavbarBrand href={routes.LANDING}>RomPhotos</NavbarBrand>
                       <NavbarToggler onClick={this.toggle} />
                       <Collapse isOpen={this.state.isOpen} navbar id="ca-navbar">
                         <Nav className="navbar-nav ml-auto" id="nav" navbar>
@@ -57,6 +57,9 @@ class NavigationAuth extends Component {
                           <NavItem>
                             <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
                           </NavItem>
+                          <NavItem>
+                           <NavLink href={routes.KENDO_GRID}>Grid Demo</NavLink>
+                        </NavItem>
                           <NavItem>
                             <NavLink href={routes.USER_INFO}>Account</NavLink>
                           </NavItem>                 
@@ -103,7 +106,7 @@ class NavigationNonAuth extends Component {
             <div className="col-12 col-lg-10">
               <div className="menu_area">
                 <Navbar className="navbar navbar-expand-lg navbar-light" expand="md">
-                <NavbarBrand href={routes.LANDING}>Ep</NavbarBrand>
+                <NavbarBrand href={routes.LANDING}>RomPhotos</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar id="ca-navbar">
                   <Nav className="ml-auto"  id="nav" navbar>
@@ -111,10 +114,10 @@ class NavigationNonAuth extends Component {
                       <NavLink href={routes.LANDING}>Home</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+                        <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
+                        <NavLink href={routes.KENDO_GRID}>Grid Demo</NavLink>
                     </NavItem>
                   </Nav>
                   <div className="col-12 col-lg-2">

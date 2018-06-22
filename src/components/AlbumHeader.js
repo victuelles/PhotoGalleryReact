@@ -26,7 +26,7 @@ const AlbumHeader = (props) => {
             border: '1px solid #d8d8d8',
             margin: '0.5rem 0' }} >
           
-            <Col sm="4" xs="12" >
+            <Col sm="4" xs="12" style={{paddingTop:"10px"}}>
             
             <Card onClick={setActive}> 
            
@@ -34,7 +34,7 @@ const AlbumHeader = (props) => {
              <Button color="info" size="md" onClick={setActive}> Go Back</Button>
            </Card>
             </Col>
-            <Col sm="8" xs="12" >
+            <Col sm="8" xs="12" style={{paddingTop:"10px"}}>
                 <div  key={props.card.filename}   >
                     <CardBody>
                         <CardTitle>{props.card.title}</CardTitle>

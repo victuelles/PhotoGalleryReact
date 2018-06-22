@@ -12,7 +12,7 @@ const AlbumRow = (props) => {
    // console.log("AlbumRow",props.album)
 
     return (
-        <Col sm="4" key={props.album.key} >
+        <Col sm="4" key={props.album.key} style={{paddingTop:"20px"}} >
             <Card onClick={setActive}  key={props.album.key}  >
                 <CardImg top width="100%" src={props.album.details.photo}/>
                 <CardBody>
@@ -26,7 +26,7 @@ const AlbumRow = (props) => {
                 /> {' '}
                 <Button color="secondary" size="md" outline disabled>Download link</Button>
                 {' '} <span style={{paddingLeft:"60px"}}>
-                Photos: <Badge color="secondary" pill>{props.album.details.no_of_photos}</Badge>
+                Photo Count: <Badge color="secondary" pill>{props.album.details.no_of_photos}</Badge>
                 </span>
                 </CardBody>
             </Card>

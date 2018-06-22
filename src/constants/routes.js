@@ -8,3 +8,5 @@ export const JOIN_TOKEN_SALE ='/tokensale'
 export const USER_INFO ='/user'
 export const STRIPE_STORE ='/store'
 export const PHOTO_DETAILS ='/photo_details'
+
+export const KENDO_GRID ='/grid_products'
