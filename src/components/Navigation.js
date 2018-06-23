@@ -119,15 +119,7 @@ class NavigationNonAuth extends Component {
                     <NavItem>
                       <NavLink href={routes.LANDING}>Home</NavLink>
                     </NavItem>
-                    <NavItem>
-                            <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink href={routes.EVENTS_GRID}>Events</NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink href={routes.CLIENTS_GRID}>Clients</NavLink>
-                    </NavItem>
+                   
                     <NavItem>
                       <NavLink href={routes.SIGN_IN}>Sign In</NavLink>
                     </NavItem>

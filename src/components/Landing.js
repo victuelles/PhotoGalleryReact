@@ -15,7 +15,7 @@ const Landing = () =>
                     <div className="wellcome-heading">
                         <h2>Event photos</h2>
                         <h3>Ep</h3>
-                        <p>Everything You Need. To Start Selling Online Beautifully</p>
+                        <p>Everything You Need. To Start Selling Online Beautifully (UNDER CONSTRUCTION)</p>
                     </div>
                     <div className="get-start-area">
                       
