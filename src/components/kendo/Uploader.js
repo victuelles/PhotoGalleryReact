@@ -11,7 +11,8 @@ import axios from  'axios'
 const INITIAL_STATE= {
     id:null,
     loadingProgress:0,
-   listData:[]
+   listData:[],
+   showUpload:false
   }
 class UploadContainer extends Component {
 
@@ -60,7 +61,8 @@ class UploadContainer extends Component {
           event.id=item;
           event.order=++idx;
          // console.log("event",event);
-          listData.push( event.title+' '+event.id)
+         // listData.push( event.title+' '+event.id)
+          listData.push( {'text':event.title,'value':event.id})
        
         });
         this.setState({listData:listData})
@@ -68,12 +70,14 @@ class UploadContainer extends Component {
          
         })
     }
-    onDataChange(e){
-        var value = this.value();
-        console.log('onDataChange',value)
+    onDataChange=(e)=>{
+        var value = e.sender.value();
+        console.log('onDataChange',value,e.sender.text())
+        this.setState({showUpload:true})
     }
 
     onUpload=(e)=>{
+       // e.preventDefault();
            console.log("onUpload e.files.length: " + e.files.length);
         console.log("JSON.stringify( e.files: " +JSON.stringify( e.files));
        
@@ -84,36 +88,22 @@ class UploadContainer extends Component {
             console.log("uid: " + e.files[index].uid);
          
           });
-
+          
 
 
           const fd= new FormData();
           const newFN= e.files[0].name;//this.userID+'_ID.'+e.files[0].extension
-          fd.append('image', e.files[0].name,newFN)
+          fd.append('content-type', 'multipart/form-data')
+          fd.append('image', this.state.selectedFile,newFN)
           fd.append('uid',this.userID)
-          console.log("onUpload userID",this.userID)
+       /*   console.log("onUpload userID",this.userID)
           console.log("onUpload newFN",newFN)
-          console.log("onUpload fd",fd)
-          fd.append( 'name','image');
-            fd.append( 'crossdomain',true);
-
-            const config = {
-                method: 'post',
-                url: UPLOAD_URL,
-                data:fd,
-                headers: {
-                  'Access-Control-Allow-Origin': '*',
-                  'Content-Type': 'application/json',
-                },
-              };
-              axios.request(config)
-              .then(res=>{
-                console.log(res)
-          
-              });
-   /*         
+          console.log("onUpload fd",fd)*/
+         fd.append( 'name','image');
+          fd.append( 'crossdomain',true);
+          const config = { headers: { 'Content-Type': 'multipart/form-data' } };
           axios.post(UPLOAD_URL,
-          fd,{
+          fd,{config,
             onUploadProgress:progressEvent =>{
               console.log('Upload progress: '+Math.round((progressEvent.loaded/progressEvent.total)*100)+"%")
              // this.loadingProgress= Math.round((progressEvent.loaded/progressEvent.total)*100)
@@ -122,14 +112,35 @@ class UploadContainer extends Component {
               });
             }
           }).then(res=>{
-            console.log(res)
+            console.log("response ",res)
+
+          
       
-          })*/
+          }).catch(err=>{
+            let reader = new FileReader();
+            let file = e.files[0];
+        
+            console.log("file",file);
+        
+        
+            reader.onloadend = () => {
+                this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+                });
+            }
+            reader.readAsDataURL(file.rawFile)
+            e.preventDefault();
+                this.setState({
+                selectedFile:e.files[0].rawFile,
+                isButtonDisabled: false
+            })
+          })
 
     };
     render() {
             console.log("render state",this.state)
-            let {imagePreviewUrl,loadingProgress} = this.state;
+            let {imagePreviewUrl,loadingProgress,showUpload} = this.state;
             let $imagePreview = null;
             if (imagePreviewUrl) {
                 $imagePreview = (<img src={imagePreviewUrl}  alt="ID document"/>);
@@ -149,27 +160,29 @@ class UploadContainer extends Component {
                  </div>   
 
                <div className="row">
-               <div className="col-2">
-                Event Name
-               </div>
+                <div className="col-2">
+                    Event Name
+                </div>
                 <div className="col-10">
-                   <ComboBox 
-                        dataSource={this.state.listData}
-                        change={this.onDataChange}
-                        placeholder={this.placeholder}/>
+                    <ComboBox   dataTextField= "text"
+                                 dataValueField="value"
+                            dataSource={this.state.listData}
+                            change={this.onDataChange}
+                            placeholder={this.placeholder}/>
                 </div>
                 </div>
-                <div className="imgPreview">
-                  {$imagePreview}
+                <div className={showUpload?'show':'hidden'}>
+                 
+                    <div className="dropZoneElement">Drag and drop file here</div>
+                    <Upload async={this.async} dropZone={this.dropZone}
+                        upload={this.onUpload}  />
+
+                    <div className="imgPreview">
+                    {$imagePreview}
+                    </div>
+                    <div className="text-center">{loadingProgress}%</div>
+                    <Progress value={loadingProgress}/>
                 </div>
-                <div className="text-center">{loadingProgress}%</div>
-                <Progress value={loadingProgress}/>
-                <div className="dropZoneElement">Drag and drop file here</div>
-                <Upload async={this.async} 
-                    dropZone={this.dropZone}
-                   
-                    upload={this.onUpload} 
-                    />
             </div>
         );
     }

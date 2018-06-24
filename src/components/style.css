@@ -1285,3 +1285,7 @@ p {
 .copyright-text > p {
     margin-bottom: 0;
 }
+
+.hidden { 
+    display:none; 
+}
