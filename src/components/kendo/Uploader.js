@@ -96,7 +96,7 @@ class UploadContainer extends Component {
           const newFN= e.files[0].name;//this.userID+'_ID.'+e.files[0].extension
           fd.append('content-type', 'multipart/form-data')
           fd.append('eventID',this.state.eventID)
-          fd.append('image', this.state.selectedFile,newFN)
+        //  fd.append('image', this.state.selectedFile)
           fd.append('uid',this.userID)
        /*   console.log("onUpload userID",this.userID)
           console.log("onUpload newFN",newFN)
