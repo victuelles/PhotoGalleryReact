@@ -73,7 +73,8 @@ class UploadContainer extends Component {
     onDataChange=(e)=>{
         var value = e.sender.value();
         console.log('onDataChange',value,e.sender.text())
-        this.setState({showUpload:true})
+        this.setState({showUpload:true,
+                        eventID:value})
     }
 
     onUpload=(e)=>{
@@ -94,6 +95,7 @@ class UploadContainer extends Component {
           const fd= new FormData();
           const newFN= e.files[0].name;//this.userID+'_ID.'+e.files[0].extension
           fd.append('content-type', 'multipart/form-data')
+          fd.append('eventID',this.state.eventID)
           fd.append('image', this.state.selectedFile,newFN)
           fd.append('uid',this.userID)
        /*   console.log("onUpload userID",this.userID)
@@ -101,9 +103,9 @@ class UploadContainer extends Component {
           console.log("onUpload fd",fd)*/
          fd.append( 'name','image');
           fd.append( 'crossdomain',true);
-          const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+        const config = { headers: { 'Content-Type': 'multipart/form-data' } };
           axios.post(UPLOAD_URL,
-          fd,{config,
+          fd,{
             onUploadProgress:progressEvent =>{
               console.log('Upload progress: '+Math.round((progressEvent.loaded/progressEvent.total)*100)+"%")
              // this.loadingProgress= Math.round((progressEvent.loaded/progressEvent.total)*100)

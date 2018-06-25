@@ -27,3 +27,8 @@ export const getAllEvents=(uid)=>
 
 export const getEvent=(uid,eventid)=>
     db.ref(`events/${uid}/${eventid}`).once('value')
+
+//events photos
+
+export const getEventPhotos=(uid,eventID)=>
+    db.ref(`uploads/${uid}/${eventID}`).once('value')
