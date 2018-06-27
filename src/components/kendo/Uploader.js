@@ -42,34 +42,32 @@ class UploadContainer extends Component {
           db.getUser(authUser.uid).then(snapshot=>this.setState(()=>(snapshot.val()))).then(()=>{
               console.log(this.state)
               this.userID=this.state.id
-              this.fetchData();
+          //    this.fetchData();
+                db.getAllEvents(this.state.id).then(snapshot=>{
+
+                    let data=snapshot.val();
+                  //  let gridData=[]
+                    let listData=[]
+                    Object.keys(data).map((item,idx) => {
+                        let event=data[item];
+                        event.id=item;
+                        event.order=++idx;
+                     //   gridData.push(event);
+                        listData.push( {'text':event.title,'value':event.id})
+
+                        });
+                  //      this.setState({gridData:gridData})
+                        this.setState({listData:listData})
+                }).catch(err=>{
+                    console.log('error',err);
+             
             })
         });
       
+    })
     }
 
-    fetchData=()=>{
-        let listData=[]
-        fetch('/events.json')
-        .then(rsp => rsp.json())
-        .then(data =>{
-    //     console.log(data)
-       
-        
-         Object.keys(data).map((item,idx) => {
-          let event=data[item];
-          event.id=item;
-          event.order=++idx;
-         // console.log("event",event);
-         // listData.push( event.title+' '+event.id)
-          listData.push( {'text':event.title,'value':event.id})
-       
-        });
-        this.setState({listData:listData})
-         
-         
-        })
-    }
+
     onDataChange=(e)=>{
         var value = e.sender.value();
         console.log('onDataChange',value,e.sender.text())
