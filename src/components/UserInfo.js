@@ -215,6 +215,7 @@ class UserInfo extends Component {
         </FormGroup>
 
        <br/>
+       <div style={{display:'none'}}>
         <h4>Identity documents</h4>
         <hr/>
         <FormGroup row>
@@ -254,6 +255,7 @@ class UserInfo extends Component {
             </FormText>
           </Col>
         </FormGroup>
+        </div>
           <Row>
               <Button outline size="md" color="primary">Save</Button>
          </Row>

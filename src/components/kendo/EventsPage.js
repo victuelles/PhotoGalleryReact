@@ -99,9 +99,14 @@ class GridPage extends React.Component {
             if(data){
             Object.keys(data).map((item) => {
                 let url=data[item].url;
+                let thumbnailUrl=data[item].thumbnailUrl;
                 let filename=data[item].originalname;
+                let height=data[item].height
+                let width=data[item].width
                 console.log('url',url)
-                let event={src:url,width: 4, height: 3,filename:filename}
+
+                console.log('thumbnailUrl',thumbnailUrl)
+                let event={src:thumbnailUrl,width: width, height: height,filename:filename}
              //   event.id=item;
               //  event.order=++idx;
                 photosData.push(event)
