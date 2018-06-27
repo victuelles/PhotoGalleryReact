@@ -12,6 +12,7 @@ import JoinTokeSalePage from './JoinTokeSale'
 import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
 import EventsPage from './kendo/EventsPage'
+import EventsEditPage from './kendo/EventsEditPage'
 import ClientsPage from './kendo/ClientsPage'
 import Uploader from './kendo/Uploader'
 import * as routes from '../constants/routes'
@@ -51,6 +52,9 @@ const App = () =>
         />
         <Route 
           exact path={routes.EVENTS_GRID} component={()=><EventsPage/>} 
+        /> 
+        <Route 
+          exact path={routes.EVENTS_CRUD} component={()=><EventsEditPage/>} 
         />
         <Route 
           exact path={routes.CLIENTS_GRID} component={()=><ClientsPage/>} 

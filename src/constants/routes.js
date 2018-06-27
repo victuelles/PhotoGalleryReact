@@ -11,5 +11,6 @@ export const PHOTO_DETAILS ='/photo_details'
 
 export const KENDO_GRID ='/grid_products'
 export const EVENTS_GRID ='/events'
+export const EVENTS_CRUD ='/events_edit'
 export const CLIENTS_GRID ='/clients'
 export const UPLOAD_PHOTOS ='/upload'

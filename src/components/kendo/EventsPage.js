@@ -1,5 +1,5 @@
 import React from 'react';
-import {db,firebase} from '../../firebase'
+import {db,firebase,auth} from '../../firebase'
 import { Grid, GridColumn as Column, GridCell } from '@progress/kendo-react-grid';
 //
 import '@progress/kendo-theme-bootstrap/dist/all.css';
@@ -59,28 +59,34 @@ class GridPage extends React.Component {
 
         firebase.auth.onAuthStateChanged(authUser=>{
             //retrieve from database the users/uid
+            console.log("authUser",authUser)
+            if(!authUser){
 
-          db.getUser(authUser.uid).then(snapshot=>this.setState(()=>(snapshot.val()))).then(()=>{
+                 auth.doSignOut;
+            }else{
+                db.getUser(authUser.uid).then(snapshot=>this.setState(()=>(snapshot.val()))).then(()=>{
 
-              console.log(this.state)
-              this.userID=this.state.id
-              db.getAllEvents(this.state.id).then(snapshot=>{
+                    console.log(this.state)
+                    this.userID=this.state.id
+                    db.getAllEvents(this.state.id).then(snapshot=>{
 
-                let data=snapshot.val();
-                let gridData=[]
-      
-                Object.keys(data).map((item,idx) => {
-                    let event=data[item];
-                    event.id=item;
-                    event.order=++idx;
-                    gridData.push(event);
-                    });
-                    this.setState({gridData:gridData})
-             }).catch(err=>{
-                 console.log('error',err);
-             })
-            })
+                        let data=snapshot.val();
+                        let gridData=[]
+            
+                        Object.keys(data).map((item,idx) => {
+                            let event=data[item];
+                            event.id=item;
+                            event.order=++idx;
+                            gridData.push(event);
+                            });
+                            this.setState({gridData:gridData})
+                    }).catch(err=>{
+                        console.log('error',err);
+                    })
+                    })
+                }
         });
+           
     }
     getPhotoSet=(eventId)=>{
         console.log('getPhotoSet',eventId,this.state.id)

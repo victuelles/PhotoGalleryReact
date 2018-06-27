@@ -12,7 +12,10 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
+    NavLink,  
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,DropdownItem
     } from 'reactstrap';
 
 const Navigation = () =>
@@ -51,27 +54,44 @@ class NavigationAuth extends Component {
                       <NavbarToggler onClick={this.toggle} />
                       <Collapse isOpen={this.state.isOpen} navbar id="ca-navbar">
                         <Nav className="navbar-nav ml-auto" id="nav" navbar>
-                        <NavItem>
-                            <NavLink href={routes.LANDING}>Home</NavLink>
+                          <NavItem>
+                              <NavLink href={routes.LANDING}>Home</NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+                              <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
                           </NavItem>
                           <NavItem>
-                           <NavLink href={routes.EVENTS_GRID}>Events</NavLink>
-                        </NavItem>
-                        <NavItem>
-                           <NavLink href={routes.CLIENTS_GRID}>Clients</NavLink>
-                        </NavItem>                        
-                        <NavItem>
-                           <NavLink href={routes.UPLOAD_PHOTOS}>Upload</NavLink>
-                        </NavItem>
-                          <NavItem>
-                            <NavLink href={routes.USER_INFO}>Account</NavLink>
-                          </NavItem>                 
-                          <NavItem><SignOutButton/>
+                            <NavLink href={routes.UPLOAD_PHOTOS}>Upload</NavLink>
                           </NavItem>
-                            </Nav>
+                          <NavItem>
+                              <NavLink href={routes.USER_INFO}>Account</NavLink>
+                          </NavItem> 
+                          <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                              Lookup Tables
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                              <DropdownItem>
+                                <a href={routes.CLIENTS_GRID}>Clients</a>
+                              </DropdownItem>
+                              <DropdownItem>
+                                <NavItem>
+                                   <a href={routes.EVENTS_CRUD}>Events</a>
+                                </NavItem>
+                              </DropdownItem>
+                              <DropdownItem divider />
+                              <DropdownItem>
+                                Client Photos
+                              </DropdownItem> 
+                              <DropdownItem>
+                                <a href={routes.EVENTS_GRID}>Events Photos</a>
+                              </DropdownItem>
+                            </DropdownMenu>
+                          </UncontrolledDropdown>                
+                          <NavItem>
+                            <SignOutButton/>
+                          </NavItem>
+                        </Nav>
   
                       </Collapse>
                      

@@ -27,6 +27,11 @@ export const updateClient=(uid,clientID,email,fullname,phone)=>
     db.ref(`clients/${uid}/${clientID}`).update({
         email,fullname,phone
     })
+
+export const deleteClient=(uid,clientID,isDeleted)=>
+    db.ref(`clients/${uid}/${clientID}`).update({
+        isDeleted
+    })    
 //events
 
 export const getAllEvents=(uid)=>
@@ -35,6 +40,15 @@ export const getAllEvents=(uid)=>
 export const getEvent=(uid,eventid)=>
     db.ref(`events/${uid}/${eventid}`).once('value')
 
+export const updateEvent=(uid,eventid,date,description,location,time,title)=>
+db.ref(`events/${uid}/${eventid}`).update({
+    date,description,location,time,title
+    })
+
+export const deleteEvent=(uid,eventid,isDeleted)=>
+    db.ref(`events/${uid}/${eventid}`).update({
+        isDeleted
+    }) 
 //events photos
 
 export const getEventPhotos=(uid,eventID)=>

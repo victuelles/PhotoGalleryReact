@@ -1,11 +1,11 @@
 import React from 'react';
 import {db,firebase} from '../../firebase'
 import withAuthorization from '../withAuthorization'
-import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
+import {Grid, GridColumn as Column, GridToolbar} from '@progress/kendo-react-grid';
 import MyCommandCell from './my-command-cell';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
 
-class ClientsPage extends React.Component {
+class Events extends React.Component {
     CommandCell;
     constructor(props) {
         super(props);
@@ -42,7 +42,6 @@ class ClientsPage extends React.Component {
         this.setState({
             data: newproducts
         });
-
         console.log("enterInsert newproducts=",newproducts);
     }
 
@@ -58,16 +57,19 @@ class ClientsPage extends React.Component {
 
         console.log(" save(dataItem)",dataItem)
         dataItem.inEdit = undefined;
-        dataItem.id = this.update(this.state.data, dataItem).id;
+      //  dataItem.id = this.update(this.state.data, dataItem).id;
         this.setState({
             data: this.state.data.slice()
         });
         console.log("new state",this.state)
-        db.updateClient(this.state.id,
+        db.updateEvent(this.state.id,
             dataItem.id,
-            dataItem.email,
-            dataItem.fullname,
-            dataItem.phone)
+            dataItem.date,
+            dataItem.description,
+            dataItem.location,
+            dataItem.time,
+            dataItem.title
+        )
     }
 
     cancel(dataItem) {
@@ -90,8 +92,7 @@ class ClientsPage extends React.Component {
         this.setState({
             data: this.state.data.slice()
         });
-        db.deleteClient(this.state.id,
-            dataItem.id,true)
+        db.deleteEvent(this.state.id,dataItem.id,true)
     }
 
     itemChange(event) {
@@ -138,10 +139,10 @@ class ClientsPage extends React.Component {
           db.getUser(authUser.uid).then(snapshot=>this.setState(()=>(snapshot.val()))).then(()=>{
                 console.log(this.state)
                 this.userID=this.state.id
-                db.getAllClients(this.state.id).then(snapshot=>{
+                db.getAllEvents(this.state.id).then(snapshot=>{
                 let data=snapshot.val();
                
-                console.log(' getAllClients',data)
+                console.log(' getAllEvents',data)
                 let gridData=[]
                 Object.keys(data).map((item,idx) => {
                     let event=data[item];
@@ -162,11 +163,11 @@ class ClientsPage extends React.Component {
   
 
     render() {
-        let {data,photo_set}=this.state;
+        let {data}=this.state;
       //  console.log('gridData',gridData)
         return (
             <div className="container" style={{paddingTop:"150px"}}>
-             <h2>Clients</h2>
+             <h2>Events</h2>
                 <div className="row">
                     <Grid
                           style={{ height: '420px' }}
@@ -181,22 +182,23 @@ class ClientsPage extends React.Component {
                                 onClick={this.enterInsert}
                             >Add new
                             </button>
-
-                      
-                                <button
-                                    title="Cancel current changes"
-                                    className="k-button"
-                                    onClick={(e) => this.setState({ data: data.slice() })}
-                                >Cancel current changes
-                                </button>
-                         
+                            <button
+                                title="Cancel current changes"
+                                className="k-button"
+                                onClick={(e) => this.setState({ data: data.slice() })}
+                            >Cancel current changes
+                            </button>
                         </GridToolbar>
-                        <Column field="id" title="ID" width="100px" editable={false}  />
-                        <Column field="fullname" title="Name" width="250px" />
-                        <Column field="email"   editor="email" title="Email Id" />
-                        <Column field="phone" editor="phone" title="Phone" width="280px" />
-                        <Column field="order" title="Seq"  editable={false} width="80px" />
+
+                        <Column field="id" title="ID" width="80px" editable={false} />
+                        <Column field="title" title="Event Title" width="250px" />
+                        <Column field="description" title="Description"  width="250px" />
+                        <Column field="date" title="Date" width="100px" />
+                        <Column field="time" title="Time" width="100px" />
+                        <Column field="location" title="Location" width="100px"  />
+                        <Column field="order" title="Seq"  editable={false} width="40px" />
                         <Column cell={this.CommandCell} width="180px" />
+
                     </Grid>
                 </div>
             </div>
@@ -206,4 +208,4 @@ class ClientsPage extends React.Component {
 
 
 const authCondition =(authUser)=>!!authUser;
-export default withAuthorization(authCondition)(ClientsPage);
+export default withAuthorization(authCondition)(Events);
