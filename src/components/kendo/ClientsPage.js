@@ -33,11 +33,20 @@ class ClientsPage extends React.Component {
             })
         });
      }
+
     enterInsert() {
-        const nextId=this.state.data.length+1
-        const dataItem = { inEdit: true,id:nextId,order:nextId };
-        const newproducts = this.state.data.slice();
-        newproducts.unshift(dataItem);
+        const nextId=(this.state.data?this.state.data.length+1:1)
+        let dataItem={}
+        let newproducts=[]
+        if(nextId==1){
+            dataItem=  {inEdit: true,id:nextId,email:"",fullname:"",phone:"",order:nextId}
+            newproducts.push(dataItem);
+        }else{
+            dataItem = { inEdit: true,id:nextId,order:nextId };
+            newproducts= this.state.data.slice();
+            newproducts.unshift(dataItem);
+        }
+      
         this.update(newproducts, dataItem);
         this.setState({
             data: newproducts
