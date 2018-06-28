@@ -8,7 +8,6 @@ import SignInPage from './SignIn'
 import PasswordForgetPage from './PasswordForget'
 import HomePage from './Home'
 import AccountPage from './Account'
-import JoinTokeSalePage from './JoinTokeSale'
 import UserInfoPage from './UserInfo'
 import StripeStore from './StripeStore'
 import EventsPage from './kendo/EventsPage'
@@ -40,9 +39,6 @@ const App = () =>
         />
         <Route 
           exact path={routes.ACCOUNT} component={()=><AccountPage/>} 
-        />
-        <Route 
-          exact path={routes.JOIN_TOKEN_SALE} component={()=><JoinTokeSalePage/>} 
         />
         <Route 
           exact path={routes.USER_INFO} component={()=><UserInfoPage/>} 
