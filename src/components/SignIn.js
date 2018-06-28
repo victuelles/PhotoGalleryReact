@@ -4,6 +4,10 @@ import * as routes from '../constants/routes'
 import {auth} from '../firebase'
 import {SignUpLink} from './SignUp'
 import { PasswordForgetLink} from './PasswordForget'
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const SignInPage = ({history}) => 
 <div>

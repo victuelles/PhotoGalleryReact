@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import StorePresentation from './StorePresentation'
+
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 class StripeStore extends Component {
     state= {}
 

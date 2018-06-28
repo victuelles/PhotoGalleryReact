@@ -4,6 +4,10 @@ import withAuthorization from '../withAuthorization'
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
 import MyCommandCell from './my-command-cell';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class ClientsPage extends React.Component {
     CommandCell;

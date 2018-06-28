@@ -7,6 +7,10 @@ import {UPLOAD_URL} from '../../constants/server'
 import { Container,Row,Col, Button, Form, FormGroup, Label, Input, FormText,Progress,Fade } from 'reactstrap';
 import axios from  'axios'
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const INITIAL_STATE= {
     id:null,

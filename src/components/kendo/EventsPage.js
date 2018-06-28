@@ -6,6 +6,10 @@ import '@progress/kendo-theme-bootstrap/dist/all.css';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import SelectedImage from './SelectedImage';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class GridPage extends React.Component {
     constructor(props) {

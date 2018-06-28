@@ -3,6 +3,10 @@ import Feature2 from '../images/salsa_champs.png';
 import AboutPage from './About'
 import FeaturesPage from './FeaturesPage'
 import VideoPage from './VideoPage'
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 const Landing = () => 

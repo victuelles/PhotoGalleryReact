@@ -2,6 +2,10 @@ import React,{Component} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import * as routes from '../constants/routes'
 import {auth,db} from '../firebase'
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const SignUpPage = ({history}) => 
     <div>
