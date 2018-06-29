@@ -1,6 +1,7 @@
 import React from 'react';
 import {db,firebase,auth} from '../firebase'
-
+import { Button } from '@progress/kendo-react-buttons';
+import {Row,Col  } from 'reactstrap';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
 //import Gallery from 'react-photo-gallery';
 import Gallery from 'react-grid-gallery';
@@ -159,6 +160,16 @@ class GridPage extends React.Component {
         console.log('images',images)
         return (
             <div className="container" >
+
+             <Row>
+                <Col sm="10" lg="10" md="10" xs="12" style={{paddingTop:"10px"}}>
+                <h2>Photos </h2>
+                </Col>
+                <Col sm="2" lg="2" md="2" xs="12" style={{paddingTop:"10px"}}>
+                <Button primary={true} icon="plus">Add Photos</Button>
+                </Col>
+            </Row>
+          
                 <CheckButton
                     index={0}
                     isSelected={this.state.selectAllChecked}

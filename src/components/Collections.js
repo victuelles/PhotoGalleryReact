@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CollectionPresentation from './CollectionPresentation'
 import {db,firebase} from '../firebase'
-import * as routes from '../constants/routes'
+import { Button } from '@progress/kendo-react-buttons';
+import {Row,Col  } from 'reactstrap';
 import withAuthorization from './withAuthorization'
 import ReactGA from 'react-ga';
 
@@ -39,7 +40,7 @@ class Collections extends Component {
                             details.photoCount="120"
                             event.details=details
                             event.order=++idx;
-                                                    gridData.push(event);
+                             gridData.push(event);
                             });
                             this.setState({collection:gridData})
                             this.setState({activeAlbum:null});
@@ -64,7 +65,15 @@ class Collections extends Component {
        return(
         <section className="wellcome_area2 clearfix" id="home">
           <div className="container h-100" style={{paddingTop:"120px"}}>
-          <h2>Collections</h2>
+          <Row>
+            <Col sm="10" lg="10" md="10" xs="12" style={{paddingTop:"10px"}}>
+            <h2>Collections </h2>
+            </Col>
+            <Col sm="2" lg="2" md="2" xs="12" style={{paddingTop:"10px"}}>
+             <Button primary={true} icon="plus"> New Collection</Button>
+            </Col>
+          </Row>
+          
             <CollectionPresentation allPhotos={this.state.collection} 
               setActiveAlbum={this.setActiveAlbum} 
               activeAlbum={this.state.activeAlbum}
