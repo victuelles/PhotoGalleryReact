@@ -58,14 +58,12 @@ class NavigationAuth extends Component {
                               <NavLink href={routes.LANDING}>Home</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink href={routes.STRIPE_STORE}>Store</NavLink>
+                              <NavLink href={routes.COLLECTIONS}>Collections</NavLink>
                           </NavItem>
                           <NavItem>
                             <NavLink href={routes.UPLOAD_PHOTOS}>Upload</NavLink>
                           </NavItem>
-                          <NavItem>
-                              <NavLink href={routes.USER_INFO}>Account</NavLink>
-                          </NavItem> 
+
                           <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
                               Lookup Tables
@@ -84,10 +82,16 @@ class NavigationAuth extends Component {
                                 Client Photos
                               </DropdownItem> 
                               <DropdownItem>
-                                <a href={routes.EVENTS_GRID}>Events Photos</a>
+                                <a href={routes.STRIPE_STORE}>Store</a>
+                              </DropdownItem>
+                              <DropdownItem>
+                                <a href={routes.COLLECTION}>Collection</a>
                               </DropdownItem>
                             </DropdownMenu>
-                          </UncontrolledDropdown>                
+                          </UncontrolledDropdown>   
+                          <NavItem>
+                              <NavLink href={routes.USER_INFO}>Account</NavLink>
+                          </NavItem>              
                           <NavItem>
                             <SignOutButton/>
                           </NavItem>

@@ -14,8 +14,10 @@ import EventsPage from './kendo/EventsPage'
 import EventsEditPage from './kendo/EventsEditPage'
 import ClientsPage from './kendo/ClientsPage'
 import Uploader from './kendo/Uploader'
+import CollectionsPage from './Collections'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
+import Collections from './Collections';
 
 
 const App = () => 
@@ -57,6 +59,9 @@ const App = () =>
         />
         <Route 
           exact path={routes.UPLOAD_PHOTOS} component={()=><Uploader/>} 
+        />
+        <Route 
+          exact path={routes.COLLECTIONS} component={()=><CollectionsPage/>} 
         />
          <Footer/>
       </div>

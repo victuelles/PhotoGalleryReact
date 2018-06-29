@@ -9,7 +9,7 @@ const AlbumRow = (props) => {
         props.setActiveAlbum(props.album);
        
     }
-console.log("AlbumRow",props.album)
+//console.log("AlbumRow",props.album)
 
     return (
         <Col sm="4" key={props.album.key} style={{paddingTop:"20px"}} >
@@ -17,17 +17,8 @@ console.log("AlbumRow",props.album)
                 <CardImg top width="100%" src={props.album.details.photo}/>
                 <CardBody>
                     <CardTitle>{props.album.details.title}</CardTitle>
-                    <CardText>{props.album.details.description}</CardText>
-                
-                    <Checkout
-                    name={props.album.details.title}
-                    description={props.album.details.description}
-                    amount={1}
-                /> {' '}
-                <Button color="secondary" size="md" outline disabled>Download link</Button>
-                {' '} <span style={{paddingLeft:"60px"}}>
-                Photo Count: <Badge color="secondary" pill>{props.album.details.no_of_photos}</Badge>
-                </span>
+                    <CardText>{props.album.details.date} {'  ...  '} 
+                 {props.album.details.photoCount} photos</CardText>
                 </CardBody>
             </Card>
         </Col>

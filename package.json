@@ -1,7 +1,7 @@
 {
   "name": "photo-gallery-react",
   "version": "0.1.0",
-  "homepage" : "https://romphotos.com",
+  "homepage": "https://romphotos.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -32,6 +32,7 @@
     "react-dom": "^16.4.0",
     "react-fine-uploader": "^1.1.0",
     "react-ga": "^2.5.3",
+    "react-grid-gallery": "^0.5.1",
     "react-images": "^0.5.17",
     "react-multistep": "^3.2.1",
     "react-photo-gallery": "^6.0.28",
