@@ -1,7 +1,13 @@
 import React from 'react';
-import Checkout from './Checkout'
-import {Col, Card, CardImg, CardText, CardBody,
-    CardTitle, Button,Badge } from 'reactstrap';
+import {Button,Row,Col, Card, CardImg, CardText, CardBody } from 'reactstrap';
+import {Badge,
+        Nav,
+        NavItem,
+        NavLink,  
+        UncontrolledDropdown,
+        DropdownToggle,
+        DropdownMenu,DropdownItem
+        } from 'reactstrap';   
 const AlbumRow = (props) => {
     const setActive=(e)=>{
         e.preventDefault();
@@ -12,13 +18,45 @@ const AlbumRow = (props) => {
 //console.log("AlbumRow",props.album)
 
     return (
-        <Col sm="4" key={props.album.key} style={{paddingTop:"20px"}} >
-            <Card onClick={setActive}  key={props.album.key}  >
-                <CardImg top width="100%" src={props.album.details.photo}/>
+        <Col sm="3" key={props.album.key} style={{paddingTop:"20px"}} >
+            <Card   key={props.album.key}  >
+                <CardImg top width="100%" src={props.album.details.photo} onClick={setActive}/>
                 <CardBody>
-                    <CardTitle>{props.album.details.title}</CardTitle>
-                    <CardText>{props.album.details.date} {'  ...  '} 
-                 {props.album.details.photoCount} photos</CardText>
+                  <Row>
+                    <Col sm="8">
+                        <CardText>
+                             {props.album.details.title}
+                        </CardText>
+                    </Col >
+                     <Col sm="3">
+                     <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav>
+                             <Button outline color="link"> <i class="fa fa-ellipsis-h"> </i> </Button>
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                              <DropdownItem>
+                                <a ><i class="fa fa-pencil"> </i> Edit</a>
+                              </DropdownItem>
+                              <DropdownItem>
+                                <NavItem>
+                                <a ><i class="fa fa-trash"> </i> Delete</a>
+                                </NavItem>
+                              </DropdownItem>
+                             
+                            </DropdownMenu>
+                          </UncontrolledDropdown>
+                    </Col >
+                   </Row>
+                   <Row>
+                        <Col sm="7">
+                         <CardText color="primary">{props.album.details.date} </CardText>
+                        </Col >
+                        <Col sm="4">
+                        <Badge> 
+                            {props.album.details.photoCount} photos</Badge>
+                        </Col >
+                    </Row>
+                 
                 </CardBody>
             </Card>
         </Col>

@@ -24,7 +24,7 @@ const AlbumHeader = (props) => {
         
         <Row>
             <Col sm="3" lg="3" md="3" xs="12" style={{paddingTop:"10px"}}>
-                <Button onClick={setActive}>  Back </Button>
+                <Button color="primary" onClick={setActive}>  Back </Button>
                 <Card > 
                     <CardImg top width="100%" src={props.album.details.photo}/>
                     <CardTitle>{props.album.details.title}</CardTitle>

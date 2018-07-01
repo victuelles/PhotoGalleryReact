@@ -127,9 +127,9 @@ class GridPage extends React.Component {
                 let filename=data[item].originalname;
                 let height=data[item].height
                 let width=data[item].width
-                console.log('url',url)
+             //   console.log('url',url)
 
-                console.log('thumbnailUrl',thumbnailUrl)
+               // console.log('thumbnailUrl',thumbnailUrl)
              //   let event={src:thumbnailUrl,width: width, height: height,filename:filename}
             
              let event={src:url,thumbnail:thumbnailUrl,thumbnailWidth: width, thumbnailHeight: height,caption:filename}
@@ -153,6 +153,9 @@ class GridPage extends React.Component {
 
         this.getPhotoSet(e.dataItem.id)
     }
+    addPhotos(){
+        console.log("addPhotos")
+    }
    
     render() {
         //  data={this.state.gridData}>
@@ -166,7 +169,7 @@ class GridPage extends React.Component {
                 <h2>Photos </h2>
                 </Col>
                 <Col sm="2" lg="2" md="2" xs="12" style={{paddingTop:"10px"}}>
-                <Button primary={true} icon="plus">Add Photos</Button>
+                <Button primary={true} icon="plus" onClick={this.addPhotos}>Add Photos</Button>
                 </Col>
             </Row>
           
