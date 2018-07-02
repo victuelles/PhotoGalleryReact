@@ -23,23 +23,23 @@ const AlbumRow = (props) => {
                 <CardImg top width="100%" src={props.album.details.photo} onClick={setActive}/>
                 <CardBody>
                   <Row>
-                    <Col sm="8">
+                    <Col sm="9">
                         <CardText>
                              {props.album.details.title}
                         </CardText>
                     </Col >
-                     <Col sm="3">
+                     <Col sm="2">
                      <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav>
-                             <Button outline color="link"> <i class="fa fa-ellipsis-h"> </i> </Button>
+                            <DropdownToggle nav style={{padding:"0"}}>
+                             <Button outline color="link"> <i className="fa fa-ellipsis-h"> </i> </Button>
                             </DropdownToggle>
                             <DropdownMenu right>
                               <DropdownItem>
-                                <a ><i class="fa fa-pencil"> </i> Edit</a>
+                                <a ><i className="fa fa-pencil"> </i> Edit</a>
                               </DropdownItem>
                               <DropdownItem>
                                 <NavItem>
-                                <a ><i class="fa fa-trash"> </i> Delete</a>
+                                <a ><i className="fa fa-trash"> </i> Delete</a>
                                 </NavItem>
                               </DropdownItem>
                              

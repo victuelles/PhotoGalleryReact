@@ -17,7 +17,9 @@ class CollectionCreate extends Component {
             tags:'',
             startDate:moment(),
             expiryDate:props.expiryDate,
-            isButtonDisabled:true
+            isButtonDisabled:true,
+            locationName:"",
+            durationName:""
 
         }
         this.handleChange = this.handleChange.bind(this);
@@ -44,8 +46,16 @@ class CollectionCreate extends Component {
         this.props.setFormData(null)
     }
     render() { 
-        let{tags,collectionName,startDate,expiryDate}=this.state
-        
+        let{tags,collectionName,startDate,expiryDate,locationName,durationName}=this.state
+        /*
+                        <label className="k-form-field">
+                    <span>Auto Expiry</span>
+                    <DatePicker
+                        selected={expiryDate}
+                        onChange={this.handleExpiryChange}
+                    />
+                </label>
+                 */
         return ( 
             <form className="k-form">
                 <label className="k-form-field">
@@ -59,18 +69,20 @@ class CollectionCreate extends Component {
                         onChange={this.handleChange}
                     />
                 </label>
+                <label className="k-form-field">
+                    <span>Give the location </span>
+                    <input className="k-textbox" placeholder="e.g. Marriot Hotel SF" defaultValue={locationName} onChange={event=>{this.setState(byPropKey('locationName',event.target.value))} } />
+                </label>
+                <label className="k-form-field">
+                    <span>Give the time and duration</span>
+                    <input className="k-textbox" placeholder="e.g. 1pm-5pm" defaultValue={durationName} onChange={event=>{this.setState(byPropKey('durationName',event.target.value))} } />
+                </label>
 
                 <label className="k-form-field">
                     <span>Tag your collection</span>
                     <input type="text" className="k-textbox" placeholder="Optional" defaultValue={tags} onChange={event=>this.setState(byPropKey('tags',event.target.value))} />
                 </label>
-                <label className="k-form-field">
-                    <span>Auto Expiry</span>
-                    <DatePicker
-                        selected={expiryDate}
-                        onChange={this.handleExpiryChange}
-                    />
-                </label>
+
                 <button type="button" className="k-button" onClick={this.cancelForm}>Cancel</button> &nbsp;
                  <button type="button" className="k-button k-primary" onClick={this.submitForm} disabled={this.state.collectionName===''}>Submit</button>
             </form>

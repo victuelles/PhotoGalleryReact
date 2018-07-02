@@ -1,29 +1,48 @@
 import React from 'react';
 import {db,firebase,auth} from '../firebase'
 import { Button } from '@progress/kendo-react-buttons';
-import {Row,Col  } from 'reactstrap';
+import {Row,Col,Progress  } from 'reactstrap';
+import kendo from '@progress/kendo-ui';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
 //import Gallery from 'react-photo-gallery';
 import Gallery from 'react-grid-gallery';
-
+import { Upload } from '@progress/kendo-upload-react-wrapper';
 import CheckButton from './CheckButton';
 import PropTypes from 'prop-types';
+import {UPLOAD_URL} from '../constants/server'
+import axios from  'axios'
+
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-121414075-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
+
 class GridPage extends React.Component {
     constructor(props) {
         super(props);
        
         this.state = {currentImage: 0,
-     
+            loadingProgress:0,
             album:props.album,
             images:[],
-
+            showUpload:false,
             selectAllChecked: false
         };
-
+        this.async = {
+            saveUrl: UPLOAD_URL,
+            removeUrl: "http://my-app.localhost/remove",
+            autoUpload: false
+        }
+        this.dropZone = ".dropZoneElement"
+        this.validation = {
+            allowedExtensions: [".jpg", ".png"]
+        }
 
         this.onSelectImage = this.onSelectImage.bind(this);
         this.getSelectedImages = this.getSelectedImages.bind(this);
         this.onClickSelectAll = this.onClickSelectAll.bind(this);
+   
     }
 
   
@@ -125,8 +144,8 @@ class GridPage extends React.Component {
                 let url=data[item].url;
                 let thumbnailUrl=data[item].thumbnailUrl;
                 let filename=data[item].originalname;
-                let height=data[item].height
-                let width=data[item].width
+                let height=(data[item].height?data[item].height:3)
+                let width=(data[item].width?data[item].width:4)
              //   console.log('url',url)
 
                // console.log('thumbnailUrl',thumbnailUrl)
@@ -138,6 +157,7 @@ class GridPage extends React.Component {
                 photosData.push(event)
                 });
                 this.setState({images:photosData})
+                this.setState({showUpload:false})
             }else{
                 this.setState({images:[]})
             }
@@ -153,14 +173,93 @@ class GridPage extends React.Component {
 
         this.getPhotoSet(e.dataItem.id)
     }
-    addPhotos(){
+    addPhotos=()=>{
         console.log("addPhotos")
+        this.setState({showUpload:true})
     }
-   
+    cancelAddPhotos=()=>{
+        console.log("cancelAddPhotos")
+        this.setState({showUpload:false})
+    }
+
+    onUpload=(e)=>{
+        // e.preventDefault();
+        console.log("onUpload e.files.length: " + e.files.length);
+        console.log("JSON.stringify( e.files: " +JSON.stringify( e.files));
+        
+         Object.keys(e.files).map((index, value) => {
+             console.log("name: " + e.files[index].name);
+             console.log("extension: " +  e.files[index].extension.toString());
+             console.log("size: " + e.files[index].size + " bytes");
+             console.log("uid: " + e.files[index].uid);
+          
+           });
+           
+ 
+ 
+           const fd= new FormData();
+           const newFN= e.files[0].name;//this.userID+'_ID.'+e.files[0].extension
+           fd.append('content-type', 'multipart/form-data')
+           fd.append('eventID',this.state.album.id)
+         //  fd.append('image', this.state.selectedFile)
+           fd.append('uid',this.userID)
+        /*   console.log("onUpload userID",this.userID)
+           console.log("onUpload newFN",newFN)
+           console.log("onUpload fd",fd)*/
+          fd.append( 'name','image');
+           fd.append( 'crossdomain',true);
+         const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+           axios.post(UPLOAD_URL,
+           fd,{
+             onUploadProgress:progressEvent =>{
+               console.log('Upload progress: '+Math.round((progressEvent.loaded/progressEvent.total)*100)+"%")
+              // this.loadingProgress= Math.round((progressEvent.loaded/progressEvent.total)*100)
+             this.setState({
+                 loadingProgress: Math.round((progressEvent.loaded/progressEvent.total)*100)
+               });
+             }
+           }).then(res=>{
+             console.log("response ",res)
+ 
+           
+       
+           }).catch(err=>{
+             let reader = new FileReader();
+             let file = e.files[0];
+         
+             console.log("file",file);
+         
+         
+             reader.onloadend = () => {
+                 this.setState({
+                 file: file,
+                 imagePreviewUrl: reader.result
+                 });
+             }
+             reader.readAsDataURL(file.rawFile)
+             e.preventDefault();
+                 this.setState({
+                 selectedFile:e.files[0].rawFile,
+                 isButtonDisabled: false
+             })
+           })
+ 
+     };
+
+    onSuccess = (e) => {
+        console.log("event :: success");
+        console.log(e);
+    }
+    onComplete = (e) => {
+        console.log("event :: onComplete");
+        console.log(e);
+        this.getPhotoSet(this.state.album.id)
+      
+    }
     render() {
         //  data={this.state.gridData}>
-        let {images}=this.state;
-        console.log('images',images)
+        let {images,showUpload,loadingProgress}=this.state;
+        console.log('showUpload',showUpload)
         return (
             <div className="container" >
 
@@ -169,34 +268,50 @@ class GridPage extends React.Component {
                 <h2>Photos </h2>
                 </Col>
                 <Col sm="2" lg="2" md="2" xs="12" style={{paddingTop:"10px"}}>
-                <Button primary={true} icon="plus" onClick={this.addPhotos}>Add Photos</Button>
+                <Button className={!showUpload?'show':'hidden'}  primary={true} icon="plus" onClick={this.addPhotos}>Add Photos</Button>
+                <Button className={showUpload?'show':'hidden'} primary={false} icon="cancel" onClick={this.cancelAddPhotos}>Cancel</Button>
                 </Col>
             </Row>
-          
-                <CheckButton
-                    index={0}
-                    isSelected={this.state.selectAllChecked}
-                    onClick={this.onClickSelectAll}
-                    parentHover={true}
-                    color={"rgba(0,0,0,0.54)"}
-                    selectedColor={"#4285f4"}
-                    hoverColor={"rgba(0,0,0,0.54)"}/>
-                    <div style={{
-                        height: "36px",
-                        display: "flex",
-                        alignItems: "center"
-                    }}>
-                    select all
-                    </div>
-                    <div style={{
-                        padding: "2px",
-                        color: "#666"
-                    }}>Selected images: {this.getSelectedImages().toString()}</div>
+            <div className={!showUpload?'show':'hidden'}>
+            <CheckButton
+                index={0}
+                isSelected={this.state.selectAllChecked}
+                onClick={this.onClickSelectAll}
+                parentHover={true}
+                color={"rgba(0,0,0,0.54)"}
+                selectedColor={"#4285f4"}
+                hoverColor={"rgba(0,0,0,0.54)"}/>
+                <div style={{
+                    height: "36px",
+                    display: "flex",
+                    alignItems: "center"
+                }}>
+                select all
+                </div>
+                <div style={{
+                    padding: "2px",
+                    color: "#666"
+                }}>Selected images: {this.getSelectedImages().toString()}</div>
 
-                    <Gallery images={images}    
-                             onSelectImage={this.onSelectImage}
-                             showLightboxThumbnails={true} />
+            <Gallery images={images}    
+                onSelectImage={this.onSelectImage}
+                showLightboxThumbnails={true} />
             </div>
+            <div className={showUpload?'show':'hidden'}>
+             <Row>
+                <Col sm="12" lg="12" md="12" xs="12" style={{paddingTop:"10px"}}>
+                <br/>
+                <h1>  Upload Photos </h1>
+                <div className="dropZoneElement">Drag and drop file here</div>
+                        <Upload async={this.async} dropZone={this.dropZone}
+                            upload={this.onUpload}  success={this.onSuccess} complete={this.onComplete}/>
+
+                        <div className="text-center">{loadingProgress}%</div>
+                        <Progress value={loadingProgress}/>
+                </Col>
+             </Row>
+            </div>
+        </div>
         );
     }
 }

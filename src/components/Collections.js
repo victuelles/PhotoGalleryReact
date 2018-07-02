@@ -12,7 +12,8 @@ import ReactGA from 'react-ga';
 import 'react-datepicker/dist/react-datepicker.css';
 ReactGA.initialize('UA-121414075-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
-
+const MODAL_WIDTH = 500
+const MODAL_HEIGHT= 600
 
 const CollectionsPage = ({history}) => 
 <div>
@@ -56,12 +57,13 @@ class Collections extends Component {
                 let event={}
                 event.id=item;
                 let details=data[item];
-            
-                details.photo=(details.coverUrl?details.coverUrl:"https://firebasestorage.googleapis.com/v0/b/eventphotogallery-ed881.appspot.com/o/hTpdO2769gco49UpaptUinspThm1%2Fthumb_83cb968d542577888e512297b285b869.jpg?alt=media&token=7f0714c2-d4ae-4502-85db-e312735606fc")
-                details.photoCount="120"
-                event.details=details
-                event.order=++idx;
-                 gridData.push(event);
+                if(!details.isDeleted){
+                    details.photo=(details.coverUrl?details.coverUrl:"https://firebasestorage.googleapis.com/v0/b/eventphotogallery-ed881.appspot.com/o/hTpdO2769gco49UpaptUinspThm1%2Fthumb_83cb968d542577888e512297b285b869.jpg?alt=media&token=7f0714c2-d4ae-4502-85db-e312735606fc")
+                    details.photoCount="120"
+                    event.details=details
+                    event.order=++idx;
+                    gridData.push(event);
+                }
                 });
                 this.setState({collection:gridData})
                 this.setState({activeAlbum:null});
@@ -90,8 +92,8 @@ class Collections extends Component {
                 this.state.collection.length+1,
                 data.startDate.format("MMM Do YYYY"),
                 data.tags,
-                "location here",
-                "time here",
+                data.locationName,
+                data.durationName,
                 data.collectionName
             )
             this.getAllCollections()
@@ -142,12 +144,9 @@ class Collections extends Component {
               />
 
             
-            {this.state.visible && <Dialog title={"CREATE NEW COLLECTION"} onClose={this.toggleDialog} width={800} height={850}>
+            {this.state.visible && <Dialog title={"CREATE NEW COLLECTION"} onClose={this.toggleDialog} width={MODAL_WIDTH} height={MODAL_HEIGHT}>
                         <CollectionCreate  setFormData={this.setFormData}/>
-                        <DialogActionsBar>
-                        <button type="button" className="k-button" onClick={this.toggleDialog }>Cancel</button> &nbsp;
-                            <button className="k-button k-primary" onClick={this.toggleCreateDialog }>Create</button>
-                        </DialogActionsBar>
+
                     </Dialog>}
           </div>
         </section>
