@@ -144,10 +144,13 @@ class Collections extends Component {
               />
 
             
-            {this.state.visible && <Dialog title={"CREATE NEW COLLECTION"} onClose={this.toggleDialog} width={MODAL_WIDTH} height={MODAL_HEIGHT}>
+            {this.state.visible && 
+                <Dialog title={"CREATE NEW COLLECTION"} onClose={this.toggleDialog} width={MODAL_WIDTH} height={MODAL_HEIGHT}>
                         <CollectionCreate  setFormData={this.setFormData}/>
 
-                    </Dialog>}
+                    </Dialog>
+            }
+   
           </div>
         </section>
         ) 
