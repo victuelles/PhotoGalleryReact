@@ -74,7 +74,7 @@ const Schedule = () =>
                                 </td>
                                 <td>Amelia Agustin  <a href="tel:1-415-806-4165  ">(415) 806-4165  </a><br/> 
                                 Attire:  Semi-formal<br/>
-                                Donation $40</td>
+                                Donation $30</td>
                             </tr>
 
 
