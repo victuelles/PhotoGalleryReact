@@ -96,7 +96,7 @@ class UserInfo extends Component {
     componentWillUnmount(){
 
     }
-    componentDidMount() {
+    componentWillMount() {
         firebase.auth.onAuthStateChanged(authUser=>{
             //retrieve from database the users/uid
 

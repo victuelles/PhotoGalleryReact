@@ -58,6 +58,9 @@ class NavigationAuth extends Component {
                               <NavLink href={routes.LANDING}>Home</NavLink>
                           </NavItem>
                           <NavItem>
+                            <NavLink href={routes.SCHEDULE}>Event Schedule</NavLink>
+                          </NavItem>
+                          <NavItem>
                               <NavLink href={routes.COLLECTIONS}>Collections</NavLink>
                           </NavItem>
                           <NavItem>
@@ -142,6 +145,10 @@ class NavigationNonAuth extends Component {
                   <Nav className="ml-auto"  id="nav" navbar>
                     <NavItem>
                       <NavLink href={routes.LANDING}>Home</NavLink>
+                    </NavItem>
+
+                    <NavItem>
+                      <NavLink href={routes.SCHEDULE}>Event Schedule</NavLink>
                     </NavItem>
                    
                     <NavItem>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Navigation from './Navigation'
 import Footer from './Footer'
 import LandingPage from './Landing'
@@ -17,13 +17,14 @@ import Uploader from './kendo/Uploader'
 import CollectionsPage from './Collections'
 import * as routes from '../constants/routes'
 import withAuthentication from './withAuthentication'
-import Collections from './Collections';
-
+import CollectionStore from './CollectionStore';
+import SchedulePage from './SchedulePage'
 
 const App = () => 
   <Router>
-    <div>
+    <React.Fragment>
     <Navigation />
+      
         <Route 
           exact path={routes.LANDING} component={()=><LandingPage/>} 
         />
@@ -63,10 +64,16 @@ const App = () =>
         <Route 
           exact path={routes.COLLECTIONS} component={()=><CollectionsPage/>} 
         />
+       <Route path={ routes.COLLECTION_STORE } component={(props)=><CollectionStore {...props}/>}  
+        />
+        <Route 
+          exact path={routes.SCHEDULE} component={()=><SchedulePage/>} 
+        />
          <Footer/>
-      </div>
+      </React.Fragment>
      
   </Router>
 
  
 export default withAuthentication(App)
+

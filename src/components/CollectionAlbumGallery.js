@@ -39,10 +39,6 @@ class GridPage extends React.Component {
             allowedExtensions: [".jpg", ".png"]
         }
 
-        this.onSelectImage = this.onSelectImage.bind(this);
-        this.getSelectedImages = this.getSelectedImages.bind(this);
-        this.onClickSelectAll = this.onClickSelectAll.bind(this);
-   
     }
 
   
@@ -54,7 +50,7 @@ class GridPage extends React.Component {
         );
         return f.length == images.length;
     }
-      onSelectImage (index, image) {
+      onSelectImage= (index, image)=> {
         var images = this.state.images.slice();
         var img = images[index];
         if(img.hasOwnProperty("isSelected"))
@@ -78,14 +74,14 @@ class GridPage extends React.Component {
         }
     }
 
-    getSelectedImages () {
+    getSelectedImages = ()=> {
         var selected = [];
         for(var i = 0; i < this.state.images.length; i++)
             if(this.state.images[i].isSelected == true)
                 selected.push(i);
         return selected;
     }
-    onClickSelectAll () {
+    onClickSelectAll  = ()=> {
         var selectAllChecked = !this.state.selectAllChecked;
         this.setState({
             selectAllChecked: selectAllChecked

@@ -84,12 +84,13 @@ class Collections extends Component {
         console.log("Collections setFormData =",data)
         if(data){
             //
+            const eventId= this.state.collection.length+1;
             const {history}=this.props
             this.setState({formData:data});
             //call db createCollection
-            console.log('call db createCollection')
+            console.log('call db createCollection eventId=',eventId)
             db.updateEvent(this.state.id,
-                this.state.collection.length+1,
+                eventId,
                 data.startDate.format("MMM Do YYYY"),
                 data.tags,
                 data.locationName,
