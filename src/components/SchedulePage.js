@@ -15,13 +15,12 @@ const Schedule = () =>
                 <div className="col-12">
                  
                     <div className="section-heading text-center">
-                        <h2>Event Schedule</h2>
+                        <h2>Major Filipino-American Club  Events</h2>
                         <div className="line-shape"></div>
                     </div>
                 </div>
             </div>
             <div className="row">
-             
              <div className="col-12 ">
                  <div className="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                     <table class="table table-striped">
@@ -63,6 +62,18 @@ const Schedule = () =>
                                 Donation $65</td>
                             </tr>
                             <tr>
+                                <th><h4>August 18, Saturday</h4> 
+                                    <p> 11:30 AM to Sunset </p>
+                                   
+                                </th>
+                                <td><h4>MAC Annual Family Picnic<br/>  Malasiqui Association of California</h4></td>
+                                <td>SELLICK PARK,  <br/>Appian Way, So San Francisco   <br/>
+                                 <a href="https://goo.gl/maps/5hZfukjrvMw">Show Map</a>
+                                
+                                </td>
+                                <td>Lydia Pomposo  <a href="tel:1-650-583-0364  ">(650) 583-0364  </a><br/> </td>
+                            </tr>
+                            <tr>
                                 <th><h4>September 8, Saturday  </h4> 
                                     <p> 6:00 PM - Midnight</p>
                                    
@@ -101,6 +112,185 @@ const Schedule = () =>
                     </table>
                  </div>
              </div>
+             </div>
+
+        </div>
+
+              <div className="container">
+            <div className="row">
+                <div className="col-12">
+                 
+                    <div className="section-heading text-center">
+                        <h2>Regular Dancing Schedule</h2>
+                        <div className="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+             <div className="col-12 ">
+                 <div className="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">Date/Time</th>
+                            <th scope="col">Event</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><h4>Every Monday </h4> 
+                                    <p>1:00 - 4:00 PM </p>
+                                    
+                                </th>
+                                <td><h4>Community Dancing,<br/> FILAM Seniors</h4></td>
+                                <td>Lincoln Community Center<br/>  901 Brunswick St, Daly City <br/>
+                                 <a href="https://goo.gl/maps/yuwDQCp3FCx">Show Map</a>
+                                
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Semi-formal<br/>
+                                Donation $?</td>
+                            </tr>
+                            <tr>
+                                <th><h4>Every Monday</h4> 
+                                    <p> 5:30 - 6:30 PM </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td>Amberwood Apts Hall<br/>  205 Cerro Dr, Daly City <br/> cross street is Southgate (betw St Andrew &amp; St Francis Sq)
+                                <br/> <a href="https://goo.gl/maps/SY9aRMJ7QCM2">Show Map</a>
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Casual<br/>
+                                Donation $?</td>
+                            </tr>
+                            <tr>
+                                <th><h4>Every Monday</h4> 
+                                    <p> 7:00 - 8:00 PM  </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Beginning Ballroom Class <br/> (Beginner level)</h4></td>
+                                <td>Amberwood Apts Hall<br/>  205 Cerro Dr, Daly City <br/> cross street is Southgate (betw St Andrew &amp; St Francis Sq)
+                                <br/> <a href="https://goo.gl/maps/SY9aRMJ7QCM2">Show Map</a>
+                                
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Casual<br/>
+                                Donation $?</td>
+                            </tr>
+                      
+                            <tr>
+                                <th><h4>Every Tuesday</h4> 
+                                    <p> 7:00 - 8:00 PM </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td>(care home)<br/> 20 Elkwood Drive, SSF  <br/>   on Hickey, from El Camino, right on Hilton Ave, right on Duval, 
+                          2nd  intersection is Elkwood
+                                <br/> <a href="https://goo.gl/maps/Uoa88XMUAum">Show Map</a>
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Casual<br/>
+                                Donation $?</td>
+                            </tr>
+
+                            <tr>
+                                <th><h4>Every Wednesday</h4> 
+                                    <p>  8:30 - 9:15 AM </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td>Serramonte Mall Food Court Line Dancing <br/>
+                                <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
+                                
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Casual<br/>
+                                Donation FREE</td>
+                            </tr>
+                            <tr>
+                                <th><h4>Every Wednesday</h4> 
+                                    <p>   1:00 - 4:00 </p>
+                                   
+                                </th>
+                                <td><h4>Social Dancing<br/> (All levels)</h4></td>
+                                <td>Buri-Buri Social Hall <br/>33 Arroyo Dr, SSF
+                                <br/> <a href="https://goo.gl/maps/dzezMuj4TDm">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Tony Mendoza <br/> 
+                                Attire:  Semi-Formal<br/>
+                                Donation $8</td>
+                            </tr>
+                           
+                            <tr>
+                                <th><h4>Every Wednesday</h4> 
+                                    <p>   7:00 - 8:00 PM  </p>
+                                   
+                                </th>
+                                <td><h4>Roland's Line Dancing<br/> (All levels)</h4></td>
+                                <td>Doelger Sr Center
+                                  (Westlake) <br/>33 Arroyo Dr, SSF
+                                <br/> <a href="https://goo.gl/maps/aKtiMPw64kq">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Roland <br/> 
+                                Attire:  Casual<br/>
+                                Donation $?</td>
+                            </tr>
+                            <tr>
+                                <th><h4>Every Thursday</h4> 
+                                    <p>   1:00 - 4:00 </p>
+                                   
+                                </th>
+                                <td><h4>Social Dancing<br/> (All levels)</h4></td>
+                                <td>Buri-Buri Social Hall <br/>33 Arroyo Dr, SSF
+                                <br/> <a href="https://goo.gl/maps/dzezMuj4TDm">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Moring Macalinao<br/> 
+                                Attire:  Semi-Formal<br/>
+                                Donation $8</td>
+                            </tr>
+
+                           <tr>
+                                <th><h4>Every Friday</h4> 
+                                    <p>  8:30 - 9:15 AM </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td>Serramonte Mall Food Court Line Dancing <br/>
+                                <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
+                                
+                                </td>
+                                <td>Grace David <br/> 
+                                Attire:  Casual<br/>
+                                Donation FREE</td>
+                            </tr>
+                            <tr>
+                                <th><h4>Every Friday of Month</h4> 
+                                    <p>   7:30 PM - 12:30 AM </p>
+                                   
+                                </th>
+                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td>2840 Aborn Rd,<br/> San Jose 95135  <br/>
+                                <br/> <a href="https://goo.gl/maps/QyqRwDrAVYB2">Show Map</a>
+                                
+                                </td>
+                                <td>GMonica Brillante <a href="tel:1-408-674-9706  ">(408) 674-9706</a> <br/> 
+                                Attire:  Semi-Formal<br/>
+                                Donation: </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4><a href="mailto:rom@romphotos.com" target="_top">More to follow</a></h4>
+                    
+                 </div>
+                 
+             </div>
+            
              </div>
 
         </div>
