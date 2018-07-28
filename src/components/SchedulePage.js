@@ -144,7 +144,7 @@ const Schedule = () =>
                                     <p>1:00 - 4:00 PM </p>
                                     
                                 </th>
-                                <td><h4>Community Dancing,<br/> FILAM Seniors</h4></td>
+                                <td><h4>Community Social Dancing<br/> (All Levels)</h4></td>
                                 <td>Lincoln Community Center<br/>  901 Brunswick St, Daly City <br/>
                                  <a href="https://goo.gl/maps/yuwDQCp3FCx">Show Map</a>
                                 
@@ -201,7 +201,7 @@ const Schedule = () =>
                                     <p>  8:30 - 9:15 AM </p>
                                    
                                 </th>
-                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td><h4>FREE Line Dancing Class<br/> (All levels)</h4></td>
                                 <td>Serramonte Mall Food Court Line Dancing <br/>
                                 <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
                                 
@@ -260,7 +260,7 @@ const Schedule = () =>
                                     <p>  8:30 - 9:15 AM </p>
                                    
                                 </th>
-                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td><h4> FREE Line Dancing Class<br/> (All levels)</h4></td>
                                 <td>Serramonte Mall Food Court Line Dancing <br/>
                                 <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
                                 
@@ -291,7 +291,7 @@ const Schedule = () =>
                                 </th>
                                 <td><h4>Roland's Jam Session (with Dancing)</h4></td>
                                 <td>Doelger Sr Center
-                                  (Westlake) <br/>33 Arroyo Dr, SSF
+                                  (Westlake) 
                                 <br/> <a href="https://goo.gl/maps/aKtiMPw64kq">Show Map</a>
                                 
                                 </td>
@@ -299,9 +299,43 @@ const Schedule = () =>
                                 Attire:  Casual<br/>
                                 Donation $?</td>
                             </tr>
+
+
+            
+
+                            <tr>
+                                <th><h4>Every Sunday</h4> 
+
+                                    <p>    1:00 - 4:00 PM  </p>
+                                    <p>(except 2nd Sunday/mo)</p>   
+                                </th>
+                                <td><h4> Social Dancing</h4></td>
+                                <td>Buri-buri Social Hall<br/>33 Arroyo Dr, SSF
+                                <br/> <a href="https://goo.gl/maps/dzezMuj4TDm">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Grace David <br/> 
+                                Attire:  Semi-Formal<br/>
+                                Donation $8 with snacks</td>
+                            </tr>
+
+                            <tr>
+                                <th><h4>Every Sunday</h4> 
+                                    <p>     6:00 - 10:00 PM  </p>
+                                    <p></p>   
+                                </th>
+                                <td><h4> Twilight Tea Dance</h4></td>
+                                <td>Dance Vita Ballroom,<br/> 85  W 43rd Ave, San Mateo
+                                <br/> <a href="https://goo.gl/maps/fneuYwrSJJP2">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Steve Dunca <br/> 
+                                Attire:  Semi-Formal<br/>
+                                Donation $12 with snacks</td>
+                            </tr>
                         </tbody>
                     </table>
-                    <h4><a href="mailto:rom@romphotos.com" target="_top">More to follow</a></h4>
+                    <h4>Email for additions and corrections. <a href="mailto:rom@romphotos.com" target="_top">More to follow</a></h4>
                     
                  </div>
                  
