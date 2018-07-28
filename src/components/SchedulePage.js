@@ -270,18 +270,34 @@ const Schedule = () =>
                                 Donation FREE</td>
                             </tr>
                             <tr>
-                                <th><h4>Every Friday of Month</h4> 
+                                <th><h4>Every 2nd Friday of Month</h4> 
                                     <p>   7:30 PM - 12:30 AM </p>
                                    
                                 </th>
-                                <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
+                                <td><h4>Social Dancing<br/> (All levels)</h4></td>
                                 <td>2840 Aborn Rd,<br/> San Jose 95135  <br/>
                                 <br/> <a href="https://goo.gl/maps/QyqRwDrAVYB2">Show Map</a>
                                 
                                 </td>
-                                <td>GMonica Brillante <a href="tel:1-408-674-9706  ">(408) 674-9706</a> <br/> 
+                                <td>Monica Brillante <a href="tel:1-408-674-9706  ">(408) 674-9706</a> <br/> 
                                 Attire:  Semi-Formal<br/>
                                 Donation: </td>
+                            </tr>
+
+                              <tr>
+                                <th><h4>Every Saturday</h4> 
+                                    <p>    1:00 - 4:00 PM  </p>
+                                   
+                                </th>
+                                <td><h4>Roland's Jam Session (with Dancing)</h4></td>
+                                <td>Doelger Sr Center
+                                  (Westlake) <br/>33 Arroyo Dr, SSF
+                                <br/> <a href="https://goo.gl/maps/aKtiMPw64kq">Show Map</a>
+                                
+                                </td>
+                                <td>Mr. Roland <br/> 
+                                Attire:  Casual<br/>
+                                Donation $?</td>
                             </tr>
                         </tbody>
                     </table>
