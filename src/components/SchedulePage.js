@@ -62,6 +62,18 @@ const Schedule = () =>
                                 Donation $65</td>
                             </tr>
                             <tr>
+                                <th><h4>August 12, Sunday</h4> 
+                                    <p> 11:30 AM to 3:30pm </p>
+                                   
+                                </th>
+                                <td><h4>DCANC Annual Picnic<br/> Dagupan City Association of Northern California</h4></td>
+                                <td>Jose Higuera Adobe Park<br/>1830 N Park Victoria Dr., Milpitas, CA<br/> corner Wessex Place  <br/>
+                                 <a href="https://goo.gl/maps/5hZfukjrvMw">Show Map</a>
+                                
+                                </td>
+                                <td>Pepe Rosario <a href="tel:1-408-8885080  ">(408) 8885080  </a><br/> </td>
+                            </tr>
+                            <tr>
                                 <th><h4>August 18, Saturday</h4> 
                                     <p> 11:30 AM to Sunset </p>
                                    
@@ -142,6 +154,7 @@ const Schedule = () =>
                             <tr>
                                 <th><h4>Every Monday </h4> 
                                     <p>1:00 - 4:00 PM </p>
+                                    <p>(Confirmation needed)</p>
                                     
                                 </th>
                                 <td><h4>Community Social Dancing<br/> (All Levels)</h4></td>
@@ -187,7 +200,7 @@ const Schedule = () =>
                                    
                                 </th>
                                 <td><h4>Grace's Line Dancing Class<br/> (All levels)</h4></td>
-                                <td>(care home)<br/> 20 Elkwood Drive, SSF  <br/>   on Hickey, from El Camino, right on Hilton Ave, right on Duval, 
+                                <td>(Care home)<br/> 20 Elkwood Drive, SSF  <br/>   on Hickey, from El Camino, right on Hilton Ave, right on Duval, 
                           2nd  intersection is Elkwood
                                 <br/> <a href="https://goo.gl/maps/Uoa88XMUAum">Show Map</a>
                                 </td>
@@ -206,7 +219,7 @@ const Schedule = () =>
                                 <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
                                 
                                 </td>
-                                <td>Grace David <br/> 
+                                <td>City of Daly City <br/> 
                                 Attire:  Casual<br/>
                                 Donation FREE</td>
                             </tr>
@@ -236,7 +249,7 @@ const Schedule = () =>
                                 <br/> <a href="https://goo.gl/maps/aKtiMPw64kq">Show Map</a>
                                 
                                 </td>
-                                <td>Mr. Roland <br/> 
+                                <td>Mr. Roland Ditan <br/> 
                                 Attire:  Casual<br/>
                                 Donation $?</td>
                             </tr>
@@ -265,7 +278,7 @@ const Schedule = () =>
                                 <br/> <a href="https://goo.gl/maps/hFNGub73hHm">Show Map</a>
                                 
                                 </td>
-                                <td>Grace David <br/> 
+                                <td>City of Daly City <br/> 
                                 Attire:  Casual<br/>
                                 Donation FREE</td>
                             </tr>
@@ -275,7 +288,7 @@ const Schedule = () =>
                                    
                                 </th>
                                 <td><h4>Social Dancing<br/> (All levels)</h4></td>
-                                <td>2840 Aborn Rd,<br/> San Jose 95135  <br/>
+                                <td>Mt Hamilton Grange Hall<br/>2840 Aborn Rd,<br/> San Jose 95135  <br/>
                                 <br/> <a href="https://goo.gl/maps/QyqRwDrAVYB2">Show Map</a>
                                 
                                 </td>
@@ -285,17 +298,17 @@ const Schedule = () =>
                             </tr>
 
                               <tr>
-                                <th><h4>Every Saturday</h4> 
+                                <th><h4>Every 3rd Saturday Only</h4> 
                                     <p>    1:00 - 4:00 PM  </p>
                                    
                                 </th>
                                 <td><h4>Roland's Jam Session (with Dancing)</h4></td>
-                                <td>Doelger Sr Center
-                                  (Westlake) 
+                                <td>Doelger Sr Center<br/>101 Lake Merced Blvd,Daly City
+                                   
                                 <br/> <a href="https://goo.gl/maps/aKtiMPw64kq">Show Map</a>
                                 
                                 </td>
-                                <td>Mr. Roland <br/> 
+                                <td>Mr. Roland Ditan<br/> 
                                 Attire:  Casual<br/>
                                 Donation $?</td>
                             </tr>
@@ -324,14 +337,14 @@ const Schedule = () =>
                                     <p>     6:00 - 10:00 PM  </p>
                                     <p></p>   
                                 </th>
-                                <td><h4> Twilight Tea Dance</h4></td>
+                                <td><h4>  Trulife Trusted Family</h4></td>
                                 <td>Dance Vita Ballroom,<br/> 85  W 43rd Ave, San Mateo
                                 <br/> <a href="https://goo.gl/maps/fneuYwrSJJP2">Show Map</a>
                                 
                                 </td>
-                                <td>Mr. Steve Dunca <br/> 
+                                <td>Mr. Jomelle Abano <br/> 
                                 Attire:  Semi-Formal<br/>
-                                Donation $12 with snacks</td>
+                                Donation $18 with snacks</td>
                             </tr>
                         </tbody>
                     </table>
